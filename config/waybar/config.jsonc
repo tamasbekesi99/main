@@ -134,7 +134,7 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    "on-click": "omarchy-menu power",
+    //"on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10
@@ -181,8 +181,7 @@
     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
-    "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+    "spacing": 1
    },
     "custom/sep": {
         "format" : "|",
