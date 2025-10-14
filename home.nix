@@ -13,6 +13,7 @@ let
     kitty = "kitty";
     waybar = "waybar";
     yazi = "yazi";
+    swaync = "swaync";
   };
 in
 
