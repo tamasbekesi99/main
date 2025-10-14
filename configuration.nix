@@ -108,7 +108,7 @@
     hyprlock
     swww
     waypaper
-    mako
+    swaynotificationcenter
     ];
 
  fonts.packages = with pkgs; [
