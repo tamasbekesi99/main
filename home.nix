@@ -73,11 +73,28 @@ imports =[
     })
   ];
 
-  xdg.configFile = builtins.mapAttrs
+  xdg = {
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "x-scheme-handler/http" = ["librewolf.desktop"];
+        "x-scheme-handler/https" = ["librewolf.desktop"];
+        "x-scheme-handler/about" = ["librewolf.desktop"];
+        "x-scheme-handler/unknown" = ["librewolf.desktop"];
+        "images/png" = ["imv.desktop"];
+        "images/jpg" = ["imv.desktop"];
+        "images/webp" = ["imv.desktop"];
+        "images/svg+xml" = ["imv.desktop"];
+        "images/jpeg" = ["imv.desktop"];
+       };
+     }; 
+    configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     })
     configs;
+    };
 
 }

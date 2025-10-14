@@ -118,6 +118,7 @@
     brightnessctl
     btop
     mpv
+    imv
     usbutils
     playerctl
     pavucontrol
