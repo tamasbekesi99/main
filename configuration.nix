@@ -135,6 +135,7 @@
     waypaper
     swaynotificationcenter
     signal-desktop
+    nix-output-monitor
     ];
 
  fonts.packages = with pkgs; [

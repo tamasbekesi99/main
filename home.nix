@@ -39,7 +39,7 @@ imports =[
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw | & nom";
       ncg = "sudo nix-collect-garbage -d";
       vim = "nvim";
     };
