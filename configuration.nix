@@ -108,6 +108,7 @@
     hyprlock
     swww
     waypaper
+    mako
     ];
 
  fonts.packages = with pkgs; [

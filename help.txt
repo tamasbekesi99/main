@@ -1,0 +1,4 @@
+git add *
+git commit -m "<comment>"
+git push <remote name> <branchname>
+        origin          main
