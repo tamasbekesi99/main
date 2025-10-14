@@ -11,14 +11,15 @@
 @define-color white #ffffff; 
 
 * {
-  background-color: @background;
-  color: @foreground;
+  background-color: @blk;
+  color: @white;
+  opacity: 1;
 
   border: none;
   border-radius: 0;
   min-height: 0;
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -38,7 +39,7 @@
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #workspaces button.active {
@@ -76,7 +77,7 @@ tooltip {
 }
 
 .hidden {
-  opacity: 0;
+  opacity: 0.5;
 }
 
 #custom-screenrecording-indicator {
