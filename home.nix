@@ -7,7 +7,6 @@ let
   configs = {
     hypr = "hypr";
     nvim = "nvim";
-    wofi = "wofi";
     rofi = "rofi";
     foot = "foot";
     kitty = "kitty";
@@ -57,7 +56,6 @@ imports =[
     nixpkgs-fmt
     nodejs
     gcc
-    wofi
     nitch
     rofi
     pcmanfm
@@ -74,6 +72,7 @@ imports =[
   ];
 
   xdg = {
+    enable = true;
     mime.enable = true;
     mimeApps = {
       enable = true;
@@ -88,13 +87,19 @@ imports =[
         "images/svg+xml" = ["imv.desktop"];
         "images/jpeg" = ["imv.desktop"];
        };
-     }; 
+     };
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+      configPackages = [ pkgs.hyprland ];
+    };
+
     configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     })
     configs;
-    };
+  };
 
 }
