@@ -117,8 +117,8 @@
     foot
     brightnessctl
     btop
-    mpv
-    imv
+    mpv #terminal video player
+    imv #terminal image viwer
     usbutils
     playerctl
     pavucontrol
@@ -134,6 +134,10 @@
     hyprlock
     swww
     waypaper
+    grim #for screenshoots
+    slurp #for screenshoots
+    swappy #for screenshoots
+    fastfetch
     swaynotificationcenter
     signal-desktop
     nix-output-monitor
