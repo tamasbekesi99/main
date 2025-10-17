@@ -19,7 +19,8 @@ in
 {
 
 imports =[
-  ./modules/theme.nix
+#  ./modules/theme.nix
+  ./modules/bash.nix
 ];
 
   home.username = "tommy";
@@ -34,7 +35,7 @@ imports =[
     };
   };
 
-  programs.bash = {
+ /* programs.bash = {
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
@@ -47,7 +48,7 @@ imports =[
         exec uwsm start -S hyprland-uwsm.desktop
       fi
     '';
-  };
+  };*/
 
  home.packages = with pkgs; [
     neovim
