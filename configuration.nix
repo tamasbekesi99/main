@@ -24,8 +24,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  environment.variables.EDITOR = "nvim";
+
   # Set your time zone.
-   time.timeZone = "Europe/Budapest";
+  time.timeZone = "Europe/Budapest";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -141,6 +143,8 @@
     signal-desktop
     nix-output-monitor
     ];
+
+ qt.enable =true; #Needed for Catppuccin themes
 
  fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

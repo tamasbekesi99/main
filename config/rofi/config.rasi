@@ -26,4 +26,10 @@ configuration{
     kb-move-char-forward: "Control+f";
     kb-mode-complete: "Control+o";
 }
-@theme "tokyonight.rasi"
+//@theme "tokyonight.rasi"
+
+//@theme "/home/tommy/.local/share/rofi/themes/rounded-purple-dark.rasi"
+
+//@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/gruvbox-dark-hard.rasi"
+
+@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/purple.rasi"

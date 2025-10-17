@@ -19,7 +19,7 @@ in
 {
 
 imports =[
-#  ./modules/theme.nix
+  ./modules/theme.nix
   ./modules/bash.nix
 ];
 
@@ -49,6 +49,23 @@ imports =[
       fi
     '';
   };*/
+
+/* catppuccin = {
+   enable = true;
+   accent = "sapphire";
+   flavor = "mocha";
+   waybar.enable = true;
+   kitty = {
+     enable = true;
+     flavor = "latte";
+   };
+ };*/
+
+/* stylix ={
+   enable = true;
+   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+   targets.waybar.enable = true;
+};*/
 
  home.packages = with pkgs; [
     neovim
