@@ -8,6 +8,7 @@
 
   gtk = {
     enable = true;
+    colorScheme ="dark";
     theme.name = "Adwaita";
     iconTheme.name = "Adwaita";
     cursorTheme = {

@@ -61,7 +61,25 @@
   services.fstrim.enable = true; # SSD Optimizer
   services.gvfs.enable = true; # For Mounting USB & More
 
- 
+  nixpkgs.config.allowUnfree = true;
+
+  hardware = {
+    xone.enable = true;
+    graphics = {
+     enable = true;
+     enable32Bit = true;
+    };
+  };
+
+hardware.steam-hardware.enable = true;
+
+programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = false; # Open ports in the firewall for Steam Local Network Game Transfers
+};
+
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
@@ -96,7 +114,7 @@
    };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
+   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tommy = {
@@ -142,8 +160,25 @@
     swaynotificationcenter
     signal-desktop
     nix-output-monitor
+    dolphin-emu
+    unzip
+    heroic
     ];
+ 
+ hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Privacy = "device";
+        JustWorksRepairing = "always";
+        Class = "0x000100";
+        FastConnectable = true;
+      };
+  };
+  };
 
+ services.blueman.enable = true; # Bluetooth Support
  qt.enable =true; #Needed for Catppuccin themes
 
  fonts.packages = with pkgs; [
