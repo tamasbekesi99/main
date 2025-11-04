@@ -18,12 +18,12 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
  # services.getty.autologinUser = "tommy";
-displayManager.sddm = {
-  enable = true;
-  wayland = {
+  services.displayManager.sddm = {
     enable = true;
+    wayland = {
+      enable = true;
+    };
   };
-};
 
   networking.hostName = "hyprland-btw"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -148,7 +148,6 @@ programs.steam = {
     playerctl
     pavucontrol
     yazi
-    sddm
     kitty
     waybar
     wofi
