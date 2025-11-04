@@ -152,6 +152,7 @@ programs.steam = {
     thunderbird
     hyprlock
     swww
+    mpvpaper
     waypaper
     grim #for screenshoots
     slurp #for screenshoots
