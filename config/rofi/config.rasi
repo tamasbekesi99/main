@@ -32,4 +32,6 @@ configuration{
 
 //@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/gruvbox-dark-hard.rasi"
 
-@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/purple.rasi"
+//@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/purple.rasi"
+
+@theme "/nix/store/r6by463p9aqp6rk0rd23ljzwjrxs1dzd-rofi-2.0.0/share/rofi/themes/purple.rasi"

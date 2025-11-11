@@ -28,9 +28,9 @@ imports =[
   home.stateVersion = "25.05";
   programs.git = {
     enable = true;
-    userName = "tamasbekesi99";
-    userEmail = "bekesitommy@gmail.com";
-    extraConfig = {
+    settings = { 
+      user.name = "tamasbekesi99";
+      user.email = "bekesitommy@gmail.com";
       init.defaultBranch = "main";       
     };
   };
