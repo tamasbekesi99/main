@@ -17,13 +17,25 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
- # services.getty.autologinUser = "tommy";
-  services.displayManager.sddm = {
-    enable = true;
-    wayland = {
-      enable = true;
-    };
-  };
+  # services.getty.autologinUser = "tommy";
+services.displayManager.sddm = {
+   enable = true;
+   theme = "sddm-astronaut-theme";
+   wayland = {
+     enable = true;
+   };
+ };
+
+#services.greetd = {
+#   enable = true;
+#   settings = {
+#     default_session = {
+#       user = "greeter";
+#       command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd 'uwsm start hyprland-uwsm.desktop'"; # start Hyprland with a TUI login manager
+#     };
+#   };
+# };
+
 
   networking.hostName = "hyprland-btw"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -170,6 +182,8 @@ programs.steam = {
     dolphin-emu
     unzip
     heroic
+    sddm-astronaut #SDDM theme
+    kdePackages.qtmultimedia #SDDM theme
     ];
  
  hardware.bluetooth = {
