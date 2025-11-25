@@ -36,4 +36,6 @@ configuration{
 
 //@theme "/nix/store/r6by463p9aqp6rk0rd23ljzwjrxs1dzd-rofi-2.0.0/share/rofi/themes/purple.rasi"
 
-@theme "/nix/store/c45vxamxfs9rs00plw1948mviy7iyxs5-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"
+//@theme "/nix/store/c45vxamxfs9rs00plw1948mviy7iyxs5-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"
+
+@theme "/nix/store/qda1dx1sa0adn9g2c9xifk63pm19ylj4-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"
