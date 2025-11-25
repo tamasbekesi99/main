@@ -84,11 +84,18 @@
       };
    };
 
-   services.libinput.enable = true;
+  services.libinput.enable = true;
 
+  #Virt
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["tommy"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  #user
   users.users.tommy = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
