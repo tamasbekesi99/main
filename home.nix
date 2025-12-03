@@ -8,7 +8,6 @@ let
     hypr = "hypr";
     nvim = "nvim";
     rofi = "rofi";
-    foot = "foot";
     kitty = "kitty";
     waybar = "waybar";
     yazi = "yazi";
@@ -34,38 +33,6 @@ imports =[
       init.defaultBranch = "main";       
     };
   };
-
- /* programs.bash = {
-    enable = true;
-    shellAliases = {
-      btw = "echo i use nixos, btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw";
-      ncg = "sudo nix-collect-garbage -d";
-      vim = "nvim";
-    };
-    profileExtra = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec uwsm start -S hyprland-uwsm.desktop
-      fi
-    '';
-  };*/
-
-/* catppuccin = {
-   enable = true;
-   accent = "sapphire";
-   flavor = "mocha";
-   waybar.enable = true;
-   kitty = {
-     enable = true;
-     flavor = "latte";
-   };
- };*/
-
-/* stylix ={
-   enable = true;
-   base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-   targets.waybar.enable = true;
-};*/
 
  home.packages = with pkgs; [
     neovim

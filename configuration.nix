@@ -138,7 +138,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     librewolf-bin
-    foot
     brightnessctl
     btop
     mpv #terminal video player
@@ -149,7 +148,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     yazi
     kitty
     waybar
-    wofi
     hyprpaper
     keepassxc
     udiskie
