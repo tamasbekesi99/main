@@ -37,13 +37,13 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  hardware = {
-    xone.enable = true;
-    graphics = {
-     enable = true;
-     enable32Bit = true;
-    };
-  };
+#  hardware = {
+#    xone.enable = true;
+#    graphics = {
+#     enable = true;
+#     enable32Bit = true;
+#    };
+#  };
 
   hardware.steam-hardware.enable = true;
 
@@ -145,18 +145,18 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     usbutils
     playerctl
     pavucontrol
-    yazi
-    kitty
+    yazi #teminal file manager
+    kitty #terminal
     waybar
-    hyprpaper
+    hyprpaper #background image
     keepassxc
     udiskie
-    geany
+    geany #text editor
     thunderbird
     hyprlock
-    swww
+    swww #background image
     mpvpaper
-    waypaper
+    waypaper #background image
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
@@ -166,7 +166,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     nix-output-monitor
     dolphin-emu
     unzip
-    heroic
     sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
     ];
