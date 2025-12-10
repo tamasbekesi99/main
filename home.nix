@@ -10,6 +10,7 @@ let
     rofi = "rofi";
     kitty = "kitty";
     waybar = "waybar";
+    quickshell = "quickshell";
     yazi = "yazi";
     swaync = "swaync";
   };
