@@ -168,6 +168,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     unzip
     sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
+    quickshell
     ];
  
   hardware.bluetooth = {

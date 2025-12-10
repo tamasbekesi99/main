@@ -86,6 +86,7 @@ imports =[
       configPackages = [ pkgs.hyprland ];
     };
 
+    #create symlink to dot config files for portability
     configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
