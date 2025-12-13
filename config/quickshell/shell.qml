@@ -20,7 +20,7 @@ ShellRoot {
 
     // Font
     property string fontFamily: "JetBrainsMono Nerd Font"
-    property int fontSize: 14
+    property int fontSize: 16
 
     // System info properties
     property string kernelVersion: "Linux"

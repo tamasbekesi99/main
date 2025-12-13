@@ -10,6 +10,10 @@ programs.bash = {
       ncg = "sudo nix-collect-garbage -d";
       vim = "nvim";
     };
+    initExtra = ''
+      export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+      nitch
+    '';
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
         exec uwsm start -S hyprland-uwsm.desktop
