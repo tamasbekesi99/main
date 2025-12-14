@@ -236,7 +236,8 @@ ShellRoot {
                     Item { width: 8 }
 
                     Repeater {
-                        model: 9
+                        //model: 9
+                        model: [" "," "," ","󱗆 "," "," "]
 
                         Rectangle {
                             Layout.preferredWidth: 20
@@ -248,7 +249,8 @@ ShellRoot {
                             property bool hasWindows: workspace !== null
 
                             Text {
-                                text: index + 1
+                                //text: index + 1 //if you want numbers
+                                text: modelData
                                 color: parent.isActive ? root.colCyan : (parent.hasWindows ? root.colCyan : root.colMuted)
                                 font.pixelSize: root.fontSize
                                 font.family: root.fontFamily
@@ -312,7 +314,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: kernelVersion
+                        text: " " + kernelVersion
                         color: root.colRed
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -330,7 +332,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "CPU: " + cpuUsage + "%"
+                        text: " CPU: " + cpuUsage + "%"
                         color: root.colYellow
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -348,7 +350,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "Mem: " + memUsage + "%"
+                        text: " Mem: " + memUsage + "%"
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -366,7 +368,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "Disk: " + diskUsage + "%"
+                        text: " Disk: " + diskUsage + "%"
                         color: root.colBlue
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -384,7 +386,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "Vol: " + volumeLevel + "%"
+                        text: " Vol: " + volumeLevel + "%"
                         color: root.colPurple
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
