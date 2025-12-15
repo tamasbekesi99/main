@@ -160,7 +160,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
-    fastfetch
     swaynotificationcenter
     signal-desktop
     nix-output-monitor

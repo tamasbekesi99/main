@@ -41,6 +41,7 @@ imports =[
     nil
     nixpkgs-fmt
     nodejs
+    jq #for the quickshell json script in shell.qml
     gcc
     nitch
     rofi

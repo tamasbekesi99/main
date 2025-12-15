@@ -282,7 +282,7 @@ ShellRoot {
                         color: root.colMuted
                     }
 
-                    Text {
+                    /*Text {
                         text: currentLayout
                         color: root.colFg
                         font.pixelSize: root.fontSize
@@ -299,7 +299,7 @@ ShellRoot {
                         Layout.leftMargin: 2
                         Layout.rightMargin: 8
                         color: root.colMuted
-                    }
+                    }*/
 
                     Text {
                         text: activeWindow
@@ -405,7 +405,7 @@ ShellRoot {
 
                     Text {
                         id: clockText
-                        text: Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
+                        text: Qt.formatDateTime(new Date(), " ddd, MMM dd - HH:mm")
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -416,7 +416,7 @@ ShellRoot {
                             interval: 1000
                             running: true
                             repeat: true
-                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
+                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), " ddd, MMM dd - HH:mm")
                         }
                     }
 
