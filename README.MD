@@ -10,3 +10,4 @@ TODO
     - brightnessctl
     - wifi and bluutooth
     - power menu
+- add eza, zoxide, ripgrep, tealdear, bat and other usefull alternatives for aliases
