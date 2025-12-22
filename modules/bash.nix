@@ -1,7 +1,8 @@
 {config, pkgs, ...}:
 
 {
-programs.bash = {
+programs = {
+  bash = {
     enable = true;
     shellAliases = {
       btw = "echo i use nixos, btw";
@@ -10,6 +11,7 @@ programs.bash = {
       ncg = "sudo nix-collect-garbage -d";
       vim = "nvim";
       cat = "bat";
+      cd = "z";
     };
     initExtra = ''
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
@@ -21,4 +23,10 @@ programs.bash = {
       fi
     '';
   };
+
+  zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+};
 }
