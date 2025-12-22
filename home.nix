@@ -21,6 +21,7 @@ in
 imports =[
   ./modules/theme.nix
   ./modules/bash.nix
+  ./modules/zoxide.nix
 ];
 
   home.username = "tommy";
@@ -38,6 +39,10 @@ imports =[
  home.packages = with pkgs; [
     neovim
     ripgrep
+    tealdeer
+    eza
+    zoxide
+    bat
     nil
     nixpkgs-fmt
     nodejs
@@ -46,7 +51,7 @@ imports =[
     nitch
     rofi
     pcmanfm
-    (pkgs.writeShellApplication {
+    /*(pkgs.writeShellApplication {
       name = "ns";
       runtimeInputs = with pkgs; [
         fzf
@@ -55,7 +60,7 @@ imports =[
         })
       ];
       text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
-    })
+    })*/
   ];
 
   dconf.settings = {
