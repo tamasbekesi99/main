@@ -171,6 +171,8 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     ani-cli
     ffmpeg
     yt-dlp
+    neomutt
+    newsboat
     ];
  
   hardware.bluetooth = {

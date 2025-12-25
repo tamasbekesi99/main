@@ -13,6 +13,7 @@ let
     quickshell = "quickshell";
     yazi = "yazi";
     swaync = "swaync";
+    neomutt = "neomutt";
   };
 in
 

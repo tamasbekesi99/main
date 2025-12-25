@@ -25,7 +25,6 @@ ShellRoot {
     // System info properties
     property string kernelVersion: "Linux"
     property int cpuUsage: 0
-    property int batUsage: 0
     property int memUsage: 0
     property int diskUsage: 0
     property int volumeLevel: 0
@@ -80,32 +79,6 @@ ShellRoot {
         }
         Component.onCompleted: running = true
     }
-
-
-//Battery usage
-Process {
-    id: batteryProc
-    // Modify command to get both capacity and status in one call
-    command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity"]
-
-    stdout: SplitParser {
-      onRead: data => {
-       if (data) batUsage = data.trim()
-        /*const [capacityStr, status] = data.trim().split(',')
-        const capacity = parseInt(capacityStr)
-        let batteryIcon = "󰂂"
-        if (capacity <= 20) batteryIcon = "󰁺"
-        else if (capacity <= 40) batteryIcon = "󰁽"
-        else if (capacity <= 60) batteryIcon = "󰁿"
-        else if (capacity <= 80) batteryIcon = "󰂁"
-        else batteryIcon = "󰂂"
-        
-        const symbol = status === "Charging" ? "🔌" : batteryIcon
-        batUsage = `${symbol} ${capacity}%`*/
-      }
-    }
-    Component.onCompleted: running = true
-  }
 
     // Memory usage
     Process {
@@ -192,7 +165,6 @@ Process {
             memProc.running = true
             diskProc.running = true
             volProc.running = true
-            batteryProc.running = true
         }
     }
 
@@ -360,7 +332,7 @@ Process {
                     }
 
                     Text {
-                        text: " " + cpuUsage + "%"
+                        text: " CPU: " + cpuUsage + "%"
                         color: root.colYellow
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -376,10 +348,9 @@ Process {
                         Layout.rightMargin: 8
                         color: root.colMuted
                     }
-                    
 
                     Text {
-                        text: " " + memUsage + "%"
+                        text: " Mem: " + memUsage + "%"
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -397,7 +368,7 @@ Process {
                     }
 
                     Text {
-                        text: " " + diskUsage + "%"
+                        text: " Disk: " + diskUsage + "%"
                         color: root.colBlue
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -415,26 +386,8 @@ Process {
                     }
 
                     Text {
-                        text: " " + volumeLevel + "%"
+                        text: " Vol: " + volumeLevel + "%"
                         color: root.colPurple
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
-                        font.bold: true
-                        Layout.rightMargin: 8
-                    }
-
-                    Rectangle {
-                        Layout.preferredWidth: 1
-                        Layout.preferredHeight: 16
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.leftMargin: 0
-                        Layout.rightMargin: 8
-                        color: root.colMuted
-                    }
-                    
-                     Text {
-                        text: "󱊣" + batUsage + "%"
-                        color: root.colRed
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
                         font.bold: true
