@@ -8,19 +8,30 @@ import QtQuick.Layouts
 ShellRoot {
     id: root
 
-    // Theme colors
-    property color colBg: "#1a1b26"
-    property color colFg: "#a9b1d6"
+    // Theme colors Cyberpunk //Tokyonight
+    property color colBg: "#210b4b" //"#1a1b26"
+    property color colFg: "#ffffff"//"#a9b1d6"
     property color colMuted: "#444b6a"
-    property color colCyan: "#0db9d7"
-    property color colPurple: "#ad8ee6"
-    property color colRed: "#f7768e"
-    property color colYellow: "#e0af68"
+    property color colCyan: "#00ccff" //"#0db9d7"
+    property color colPurple: "#A42DB4" //"#ad8ee6"
+    property color colRed:  "#FF3D94"//"#f7768e"
+    property color colYellow: "#FFCC00" //"#e0af68"
     property color colBlue: "#7aa2f7"
+    property color colGreen: "#00FFAA"
+
+    /*
+Cyberpunk Yellow - #FFCC00
+Cyberpunk Pink - #FF3D94
+Neon Magenta - #FF00CC
+Cyberpunk Purple - #A42DB4 or #711D9A
+Synthwave Blue - #00CCFF
+Violet Cyberpunk - #210B4B
+Cyberpunk Green - #00FFAA*/
+
 
     // Font
     property string fontFamily: "JetBrainsMono Nerd Font"
-    property int fontSize: 16
+    property int fontSize: 18
 
     // System info properties
     property string kernelVersion: "Linux"
@@ -229,7 +240,7 @@ Process {
                 right: true
             }
 
-            implicitHeight: 30
+            implicitHeight: 40
             color: root.colBg
 
             margins {
@@ -265,7 +276,7 @@ Process {
 
                     Repeater {
                         //model: 9
-                        model: [" "," "," ","󱗆 "," "," "]
+                        model: ["","","","󰺻","",""]
 
                         Rectangle {
                             Layout.preferredWidth: 20
@@ -361,7 +372,7 @@ Process {
 
                     Text {
                         text: " " + cpuUsage + "%"
-                        color: root.colYellow
+                        color: root.colGreen
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
                         font.bold: true

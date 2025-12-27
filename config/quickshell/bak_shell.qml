@@ -8,23 +8,35 @@ import QtQuick.Layouts
 ShellRoot {
     id: root
 
-    // Theme colors
-    property color colBg: "#1a1b26"
-    property color colFg: "#a9b1d6"
+    // Theme colors Cyberpunk //Tokyonight
+    property color colBg: "#210b4b" //"#1a1b26"
+    property color colFg: "#ffffff"//"#a9b1d6"
     property color colMuted: "#444b6a"
-    property color colCyan: "#0db9d7"
-    property color colPurple: "#ad8ee6"
-    property color colRed: "#f7768e"
-    property color colYellow: "#e0af68"
+    property color colCyan: "#00ccff" //"#0db9d7"
+    property color colPurple: "#A42DB4" //"#ad8ee6"
+    property color colRed:  "#FF3D94"//"#f7768e"
+    property color colYellow: "#FFCC00" //"#e0af68"
     property color colBlue: "#7aa2f7"
+    property color colGreen: "#00FFAA"
+
+    /*
+Cyberpunk Yellow - #FFCC00
+Cyberpunk Pink - #FF3D94
+Neon Magenta - #FF00CC
+Cyberpunk Purple - #A42DB4 or #711D9A
+Synthwave Blue - #00CCFF
+Violet Cyberpunk - #210B4B
+Cyberpunk Green - #00FFAA*/
+
 
     // Font
     property string fontFamily: "JetBrainsMono Nerd Font"
-    property int fontSize: 16
+    property int fontSize: 18
 
     // System info properties
     property string kernelVersion: "Linux"
     property int cpuUsage: 0
+    property int batUsage: 0
     property int memUsage: 0
     property int diskUsage: 0
     property int volumeLevel: 0
@@ -79,6 +91,32 @@ ShellRoot {
         }
         Component.onCompleted: running = true
     }
+
+
+//Battery usage
+Process {
+    id: batteryProc
+    // Modify command to get both capacity and status in one call
+    command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity"]
+
+    stdout: SplitParser {
+      onRead: data => {
+       if (data) batUsage = data.trim()
+        /*const [capacityStr, status] = data.trim().split(',')
+        const capacity = parseInt(capacityStr)
+        let batteryIcon = "󰂂"
+        if (capacity <= 20) batteryIcon = "󰁺"
+        else if (capacity <= 40) batteryIcon = "󰁽"
+        else if (capacity <= 60) batteryIcon = "󰁿"
+        else if (capacity <= 80) batteryIcon = "󰂁"
+        else batteryIcon = "󰂂"
+        
+        const symbol = status === "Charging" ? "🔌" : batteryIcon
+        batUsage = `${symbol} ${capacity}%`*/
+      }
+    }
+    Component.onCompleted: running = true
+  }
 
     // Memory usage
     Process {
@@ -165,6 +203,7 @@ ShellRoot {
             memProc.running = true
             diskProc.running = true
             volProc.running = true
+            batteryProc.running = true
         }
     }
 
@@ -201,7 +240,7 @@ ShellRoot {
                 right: true
             }
 
-            implicitHeight: 30
+            implicitHeight: 40
             color: root.colBg
 
             margins {
@@ -237,7 +276,7 @@ ShellRoot {
 
                     Repeater {
                         //model: 9
-                        model: [" "," "," ","󱗆 "," "," "]
+                        model: ["","","","󰺻","",""]
 
                         Rectangle {
                             Layout.preferredWidth: 20
@@ -332,8 +371,8 @@ ShellRoot {
                     }
 
                     Text {
-                        text: " CPU: " + cpuUsage + "%"
-                        color: root.colYellow
+                        text: " " + cpuUsage + "%"
+                        color: root.colGreen
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
                         font.bold: true
@@ -348,9 +387,10 @@ ShellRoot {
                         Layout.rightMargin: 8
                         color: root.colMuted
                     }
+                    
 
                     Text {
-                        text: " Mem: " + memUsage + "%"
+                        text: " " + memUsage + "%"
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -368,7 +408,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: " Disk: " + diskUsage + "%"
+                        text: " " + diskUsage + "%"
                         color: root.colBlue
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -386,8 +426,26 @@ ShellRoot {
                     }
 
                     Text {
-                        text: " Vol: " + volumeLevel + "%"
+                        text: " " + volumeLevel + "%"
                         color: root.colPurple
+                        font.pixelSize: root.fontSize
+                        font.family: root.fontFamily
+                        font.bold: true
+                        Layout.rightMargin: 8
+                    }
+
+                    Rectangle {
+                        Layout.preferredWidth: 1
+                        Layout.preferredHeight: 16
+                        Layout.alignment: Qt.AlignVCenter
+                        Layout.leftMargin: 0
+                        Layout.rightMargin: 8
+                        color: root.colMuted
+                    }
+                    
+                     Text {
+                        text: "󱊣" + batUsage + "%"
+                        color: root.colRed
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
                         font.bold: true

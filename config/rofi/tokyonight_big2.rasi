@@ -1,5 +1,5 @@
 /*
- * Tokyonight colorscheme for rofi
+ * Tokyonight colorscheme (big icons) for rofi
  * User: w8ste
  */
 
@@ -32,8 +32,8 @@ window {
     location: center;
     anchor: center;
     transparency: "screenshot";
-    border-color: @primary;   
-    border: 3px;
+    border-color: @transparent;   
+    border: 0px;
     border-radius: 6px;
     spacing: 0;
     children: [ mainbox ];
@@ -47,17 +47,15 @@ mainbox {
 inputbar {
     color: @kl;
     padding: 11px;
-    border: 0 0 2px 0;
+    border: 3px 3px 2px 3px;
     border-color: @primary;
+    border-radius: 6px 6px 0px 0px;
 }
 
 message {
     padding: 0;
-}
-
-textbox {
-    color: @kl;
-    padding: 10px;
+    border-color: @primary;
+    border: 0px 1px 1px 1px;
 }
 
 entry, prompt, case-indicator {
@@ -77,8 +75,11 @@ listview {
     layout: vertical;
     //spacing: 5px;
     padding: 8px;
-    lines: 12;
-    columns: 1;
+    lines: 7;
+    columns: 2;
+    border: 0px 3px 3px 3px; 
+    border-radius: 0px 0px 6px 6px;
+    border-color: @primary;
     dynamic: false;
 }
 
@@ -92,6 +93,7 @@ element {
 element-text {
     background-color: inherit;
     text-color: inherit;
+    vertical-align: 0.5;
 }
 
 element selected.normal {
@@ -104,9 +106,10 @@ element normal active {
     color: @black;
 }
 
-element-text, element-icon {
+element-icon {
     background-color: inherit;
     text-color: inherit;
+    size: 2.5em;
 }
 
 element normal urgent {
@@ -132,7 +135,3 @@ button selected normal {
     border: 2px 0px 2px 2px;
     border-color: @primary;
 }
-
-scrollbar {
-    enabled: true;
-} 

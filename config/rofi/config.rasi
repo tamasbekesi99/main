@@ -7,8 +7,8 @@ configuration{
     location: 0;
     disable-history: false;
     sidebar-mode: false;
-    display-drun: " ";
-    display-run: " ";
+    display-drun: "󰜎";
+    display-run: "󰜎";
     display-window: " ";
     
     //adding vim keybindings
@@ -28,6 +28,10 @@ configuration{
 }
 //@theme "tokyonight.rasi"
 
+@theme "tokyonight_big1.rasi"
+
+//@theme "tokyonight_big2.rasi"
+
 //@theme "/home/tommy/.local/share/rofi/themes/rounded-purple-dark.rasi"
 
 //@theme "/nix/store/ij44x3sgc9mqzvkjv1qfkbm55g1mi94w-rofi-2.0.0/share/rofi/themes/gruvbox-dark-hard.rasi"
@@ -38,4 +42,4 @@ configuration{
 
 //@theme "/nix/store/c45vxamxfs9rs00plw1948mviy7iyxs5-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"
 
-@theme "/nix/store/qda1dx1sa0adn9g2c9xifk63pm19ylj4-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"
+//@theme "/nix/store/qda1dx1sa0adn9g2c9xifk63pm19ylj4-rofi-2.0.0/share/rofi/themes/DarkBlue.rasi"

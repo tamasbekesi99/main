@@ -34,8 +34,10 @@
     gtk-cursor-theme-size=24
   '';
 
+  xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
+  
   home.sessionVariables = {
     XCURSOR_THEME = "Adwaita";
-    XCURSOR_SIZE = "24";
+    XCURSOR_SIZE = "36";
   };
 }
