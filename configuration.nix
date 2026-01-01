@@ -137,7 +137,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    librewolf-bin
+    librewolf
     brightnessctl
     btop
     mpv #terminal video player
@@ -193,6 +193,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
 
  fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka
  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
