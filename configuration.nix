@@ -147,6 +147,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     pavucontrol
     yazi #teminal file manager
     kitty #terminal
+    alacritty
     waybar
     hyprpaper #background image
     keepassxc

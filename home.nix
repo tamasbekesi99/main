@@ -5,6 +5,7 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   configs = {
+    alacritty = "alacritty";
     hypr = "hypr";
     nvim = "nvim";
     rofi = "rofi";
@@ -39,6 +40,7 @@ imports =[
  home.packages = with pkgs; [
     neovim
     ripgrep
+    fzf
     tealdeer
     eza
     zoxide
@@ -51,16 +53,7 @@ imports =[
     nitch
     rofi
     pcmanfm
-    /*(pkgs.writeShellApplication {
-      name = "ns";
-      runtimeInputs = with pkgs; [
-        fzf
-        (nix-search-tv.overrideAttrs {
-          env.GOEXPERIMENT = "jsonv2";
-        })
-      ];
-      text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
-    })*/
+    nix-search-tv
   ];
 
   dconf.settings = {
