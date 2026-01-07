@@ -39,5 +39,6 @@
   home.sessionVariables = {
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "36";
+    WLR_NO_HARDWARE_CURSORS = 1;
   };
 }
