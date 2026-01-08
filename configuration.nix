@@ -204,4 +204,3 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
   system.stateVersion = "25.05"; # Do NOT change
 
 }
-

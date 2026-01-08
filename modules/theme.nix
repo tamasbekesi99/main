@@ -33,12 +33,12 @@
     gtk-cursor-theme-name=Adwaita
     gtk-cursor-theme-size=24
   '';
-
+  xdg.configFile."mimeapps.list".force = true;
   xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
   
   home.sessionVariables = {
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "36";
-    WLR_NO_HARDWARE_CURSORS = 1;
+    WLR_NO_HARDWARE_CURSORS = 1; #for gaming
   };
 }
