@@ -172,7 +172,7 @@ ShellRoot {
                               Rectangle {
                                   width: 20
                                   height: 3
-                                  color: parent.isActive ? root.colPurple : root.colBg
+                                  color: parent.isActive ? root.colYellow : root.colBg
                                   anchors.horizontalCenter: parent.horizontalCenter
                                   anchors.bottom: parent.bottom
                               }
@@ -214,7 +214,7 @@ ShellRoot {
 
                        Text {
                            text: activeWindow
-                           color: root.colPurple
+                           color: root.colYellow
                            font.pixelSize: root.fontSize
                            font.family: root.fontFamily
                            font.bold: true
@@ -318,7 +318,7 @@ ShellRoot {
                        }
 
                        Text {
-                           text: "󱊣" + Battery.batUsage + "%"
+                           text: Battery.batUsage
                            color: root.colRed
                            font.pixelSize: root.fontSize
                            font.family: root.fontFamily
