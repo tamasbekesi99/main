@@ -37,7 +37,7 @@ Singleton {
       }
 
   Timer {
-    interval: 1000
+    interval: 120000
     running: true
     repeat: true
     onTriggered: batteryProc.running = true

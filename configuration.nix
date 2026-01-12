@@ -1,5 +1,14 @@
 { config, lib, pkgs, ... }:
 
+let
+  sddm-astronaut = pkgs.sddm-astronaut.override {
+  embeddedTheme = "black_hole"; #for overriding astronaut theme
+  /*themeConfig = {
+      Background = /pathto/image;
+    };*/
+  };
+in
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -14,6 +23,7 @@
   services.displayManager.sddm = {
     enable = true;
     theme = "sddm-astronaut-theme";
+    extraPackages = [ pkgs.sddm-astronaut ];
     wayland = {
       enable = true;
     };
@@ -174,6 +184,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     yt-dlp
     neomutt
     newsboat
+    pinta
     ];
  
   hardware.bluetooth = {

@@ -301,7 +301,7 @@ ShellRoot {
 
                        Text {
                            text: " " + Vol.volumeLevel + "%"
-                           color: root.colPurple
+                           color: root.colYellow
                            font.pixelSize: root.fontSize
                            font.family: root.fontFamily
                            font.bold: true
