@@ -300,7 +300,7 @@ ShellRoot {
                        }
 
                        Text {
-                           text: " " + Vol.volumeLevel + "%"
+                           text: " " + Vol.volumeLevel + "% " + Mic.micLevel + "%"
                            color: root.colYellow
                            font.pixelSize: root.fontSize
                            font.family: root.fontFamily

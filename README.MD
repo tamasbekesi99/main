@@ -9,3 +9,4 @@ TODO
     - brightnessctl
     - wifi and bluetooth
     - power menu
+    - system tray
