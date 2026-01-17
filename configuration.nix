@@ -210,7 +210,15 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.openssh.enable = true;
+  services.openssh =  {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "tommy" ];
+    };
+  };
 
   system.stateVersion = "25.05"; # Do NOT change
 
