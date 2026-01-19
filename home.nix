@@ -39,6 +39,7 @@ imports =[
 
  home.packages = with pkgs; [
     neovim
+    fd
     ripgrep
     fzf
     tealdeer

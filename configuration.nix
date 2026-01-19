@@ -2,9 +2,10 @@
 
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-  embeddedTheme = "black_hole"; #for overriding astronaut theme
+  embeddedTheme = "hyprland_kath"; #for overriding astronaut theme
   /*themeConfig = {
-      Background = /pathto/image;
+      Background = toString ./sddmbg.jpg;
+      BackgroundMode = "fill";
     };*/
   };
 in
@@ -157,7 +158,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     pavucontrol
     yazi #teminal file manager
     kitty #terminal
-    alacritty
     waybar
     hyprpaper #background image
     keepassxc
@@ -184,7 +184,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     yt-dlp
     neomutt
     newsboat
-    pinta
     ];
  
   hardware.bluetooth = {
@@ -216,7 +215,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "tommy" ];
     };
   };
 
