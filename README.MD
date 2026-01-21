@@ -10,3 +10,4 @@ TODO
     - wifi and bluetooth
     - power menu
     - system tray
+- fine tun neomutt mailcap file for mime
