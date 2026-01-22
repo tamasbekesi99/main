@@ -142,31 +142,31 @@ in
   };
 };
 
-environment.etc."firefox/policies/policies.json".target = "librewolf/policies/policies.json";*/
-
+environment.etc."firefox/policies/policies.json".target = "librewolf/policies/policies.json";
+*/
 
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
-    librewolf
-    brightnessctl
+    #librewolf #web browser
+    lynx #terminal web browser
+    brightnessctl #for laptop  brightness
     btop
     mpv #terminal video player
     imv #terminal image viwer
     usbutils
     playerctl
-    pavucontrol
+    pavucontrol #GUI for the audio
     yazi #teminal file manager
     kitty #terminal
     waybar
     hyprpaper #background image
     keepassxc
-    udiskie
+    udiskie #for mounting USB
     geany #text editor
     thunderbird
-    hyprlock
+    hyprlock # lockscreen
     swww #background image
-    mpvpaper
     waypaper #background image
     grim #for screenshoots
     slurp #for screenshoots
@@ -174,16 +174,16 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     swaynotificationcenter
     signal-desktop
     nix-output-monitor
-    dolphin-emu
     unzip
     sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
     quickshell
-    ani-cli
-    ffmpeg
+    ani-cli #anime in the terminal
+    ffmpeg #codecs
     yt-dlp
-    neomutt
-    newsboat
+    neomutt #terminal email program
+    newsboat #terminal RSS feed reader
+    seahorse
     ];
  
   hardware.bluetooth = {
@@ -208,6 +208,10 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.gnupg.agent ={
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   services.openssh =  {
     enable = true;

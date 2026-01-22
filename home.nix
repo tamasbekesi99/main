@@ -28,6 +28,7 @@ imports =[
   home.username = "tommy";
   home.homeDirectory = "/home/tommy";
   home.stateVersion = "25.11";
+  
   programs.git = {
     enable = true;
     settings = { 
@@ -35,6 +36,17 @@ imports =[
       user.email = "bekesitommy@gmail.com";
       init.defaultBranch = "main";       
     };
+  };
+
+  programs.chromium = {
+    enable = true;
+    package = pkgs.brave;
+    extensions = [
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
+    ];
+    commandLineArgs = [
+      "--disable-features=WebRtcAllowInputVolumeAdjustment"
+    ];
   };
 
  home.packages = with pkgs; [
