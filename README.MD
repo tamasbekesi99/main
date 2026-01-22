@@ -5,6 +5,7 @@ When Downloaded, hardware.nix file should be replaced with the system one.
 
 TODO
 - make quickshell more functional
+- and/or implement rofi functions for the following items
     - audio control
     - brightnessctl
     - wifi and bluetooth
