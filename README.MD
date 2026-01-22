@@ -10,4 +10,4 @@ TODO
     - wifi and bluetooth
     - power menu
     - system tray
-- fine tun neomutt mailcap file for mime
+- add abook isync msmtp notmuch urlscan support for neomutt
