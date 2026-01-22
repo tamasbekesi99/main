@@ -105,19 +105,19 @@ set pgp_default_key = 0C1E1ED9F533DEBFBB8C92FF17083A83BBEF469D
 set crypt_use_gpgme = yes
 
 # Automatically sign all out-going email
-set crypt_autosign = yes
+set crypt_autosign = no
 
 # Sign replies to signed emails
-set crypt_replysign = yes
+set crypt_replysign = no
 
 # Encrypt replies to encrypted emails
-set crypt_replyencrypt = yes
+set crypt_replyencrypt = no
 
 # Encrypt and sign replies to encrypted and signed email
-set crypt_replysignencrypted = yes
+set crypt_replysignencrypted = no
 
 # Attempt to verify signatures automatically
-set crypt_verify_sig = yes
+set crypt_verify_sig = no
 
 # Attempt to encrypt automatically, if possible
 # I would recommend setting this to no as university often have spam filters
