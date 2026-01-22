@@ -17,11 +17,11 @@ NOTE
 
 Neomutt sourced passwords.ggp contains similiar scheme
 
-# User
+\# User
 set from = "<youremailname>@gmail.com"
 set realname = "Your Name"
 
-# Gmail
+\# Gmail
 set imap_user = "your_email_name@gmail.com"
 set smtp_url = "smtps://<your_email_name>@gmail.com:<your_app_password>@smtp.gmail.com:465/"
 set smtp_authenticators = 'gssapi:login'
