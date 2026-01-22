@@ -18,7 +18,7 @@ When Downloaded, hardware.nix file should be replaced with the system one.
 Neomutt sourced passwords.ggp contains similiar scheme
 
 \# User  
-set from = "<youremailname>@gmail.com"  
+set from = "<your_email_name>@gmail.com"  
 set realname = "Your Name"  
 
 \# Gmail  
