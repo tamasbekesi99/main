@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
-  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config"; #The path to your portable config files
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path; #Create symlink to your .config
 
+  #Make sure to 'mkdir' theese folders in your portable config folder!!!
   configs = {
     hypr = "hypr";
     nvim = "nvim";

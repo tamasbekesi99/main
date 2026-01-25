@@ -1,3 +1,5 @@
+![My image](./swappy-20260125_144931.png)
+
 This is just a test readme
 
 make config changes in nixos-dotfiles/config also home.nix
