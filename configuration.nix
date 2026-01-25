@@ -29,6 +29,9 @@ in
       enable = true;
     };
   };
+  
+  #Enable Flatpak support
+  services.flatpak.enable = true;
 
   networking.hostName = "hyprland-btw"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -36,12 +39,20 @@ in
   environment.variables.EDITOR = "nvim";
 
   time.timeZone = "Europe/Budapest";
-
+  
+  #Hyprland with USWM
   programs.hyprland = {
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
   };
+  
+  #Enable dank material shell
+  #programs.dms-shell.enable = true;
+
+  #For laptop power managment
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   services.fstrim.enable = true; # SSD Optimizer
   services.gvfs.enable = true; # For Mounting USB & More
@@ -184,6 +195,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     neomutt #terminal email program
     newsboat #terminal RSS feed reader
     seahorse
+    noctalia-shell
     ];
  
   hardware.bluetooth = {
@@ -207,7 +219,8 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     nerd-fonts.iosevka
  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs.gnupg.agent ={
     enable = true;
     enableSSHSupport = true;

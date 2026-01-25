@@ -5,7 +5,6 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   configs = {
-    alacritty = "alacritty";
     hypr = "hypr";
     nvim = "nvim";
     rofi = "rofi";
@@ -15,6 +14,7 @@ let
     yazi = "yazi";
     swaync = "swaync";
     neomutt = "neomutt";
+    noctalia = "noctalia";
   };
 in
 

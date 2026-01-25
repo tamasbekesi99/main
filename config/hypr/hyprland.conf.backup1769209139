@@ -33,9 +33,7 @@ exec-once = udiskie &
 exec-once = swaync &
 #exec-once = waybar & 
 exec-once = swww & waypaper --restore #hyprpaper & 
-#exec-once = qs & #launch my own quickshell bar
-#exec-once = dms run
-exec-once = noctalia-shell
+exec-once = qs &
 
 #############################
 ### ENVIRONMENT VARIABLES ###
@@ -62,7 +60,7 @@ general {
     gaps_out = 3
     border_size = 3
 
-    col.active_border = rgba(00ccffee) rgba(711d9aee) 45deg
+    col.active_border = rgba(ff00ccee) rgba(711d9aee) 45deg
     col.inactive_border = rgba(595959aa)
 
     resize_on_border = false
@@ -119,7 +117,7 @@ master {
 # https://wiki.hyprland.org/Configuring/Variables/#misc
 misc { 
     force_default_wallpaper = 1 # Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+    disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
 }
 
 
@@ -181,29 +179,14 @@ bind = $mainMod, V, togglefloating,
 bind = $mainMod, F, fullscreen
 bind = $mainMod, D, exec, $menu
 bind = $mainMod Alt, L, exec, hyprlock
+bind = $mainMod, R, exec, $reload_waybar
 bind = $mainMod, S, exec, $snip
 
-# Move focus with mainMod + vim arrow keys
+# Move focus with mainMod + arrow keys
 bind = $mainMod, l, movefocus, l
 bind = $mainMod, h, movefocus, r
 bind = $mainMod, k, movefocus, u
 bind = $mainMod, j, movefocus, d
-
-#Resize windows
-bind = $mainMod, R, submap, resize                                     # <MAIN+R ( )>
-submap=resize
-  binde = , H, resizeactive, -20  0                     # <H>
-  binde = , J, resizeactive,  0   20                    # <J>
-  binde = , K, resizeactive,  0  -20                    # <K>
-  binde = , L, resizeactive,  20  0                     # <L>
-  binde = , Left, resizeactive, -10  0                     # <Left>
-  binde = , Down, resizeactive,  0   10                    # <Down>
-  binde = , Up,   resizeactive,  0  -10                    # <Up>
-  binde = , Right, resizeactive,  10  0                     # <Right>
-# Quit submap
-bind  = , R,      submap, reset                                         # <R>
-bindt = , escape, submap, reset                                         # <ESC>
-submap = reset
 
 # Switch workspaces with mainMod + [0-9]
 bind = $mainMod, 1, workspace, 1
@@ -251,7 +234,3 @@ bindm = $mainMod, mouse:273, resizewindow
 #windowrulev2 = opacity 0.8 0.8,class:^(alacritty)$
 
 windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
-
-source = ./dms/outputs.conf
-
-source = ./dms/cursor.conf
