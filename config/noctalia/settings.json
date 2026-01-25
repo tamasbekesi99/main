@@ -50,15 +50,15 @@
                     "characterCount": 2,
                     "colorizeIcons": false,
                     "enableScrollWheel": true,
-                    "followFocusedScreen": true,
+                    "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
                     "iconScale": 1,
                     "id": "Workspace",
                     "labelMode": "index",
-                    "showApplications": false,
-                    "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "showApplications": true,
+                    "showLabelsOnlyWhenOccupied": false,
+                    "unfocusedIconsOpacity": 0.8
                 },
                 {
                     "compactMode": false,
@@ -485,10 +485,6 @@
     },
     "templates": {
         "activeTemplates": [
-            {
-                "enabled": true,
-                "id": "kitty"
-            },
             {
                 "enabled": true,
                 "id": "hyprland"

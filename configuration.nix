@@ -36,6 +36,14 @@ in
   networking.hostName = "hyprland-btw"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  #Tailscale
+  services.tailscale.enable = true;
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
+
   environment.variables.EDITOR = "nvim";
 
   time.timeZone = "Europe/Budapest";
