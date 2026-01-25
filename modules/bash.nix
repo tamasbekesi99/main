@@ -16,7 +16,7 @@ programs = {
         #ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     initExtra = ''
-      export PS1='\[\e[38;5;201m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+      export PS1='\[\e[35m\]\[\e[0m\] in \[\e[36m\]\[\e[0m\] \w \$ '
       nitch
     '';
     profileExtra = ''

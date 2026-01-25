@@ -1,0 +1,143 @@
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
+import qs.Commons
+import qs.Widgets
+import qs.Services.UI
+
+Rectangle {
+  id: root
+
+  property var pluginApi: null
+  property ShellScreen screen
+  property string widgetId: ""
+  property string section: ""
+  property int sectionWidgetIndex: -1
+  property int sectionWidgetsCount: 0
+
+  readonly property bool pillDirection: BarService.getPillDirection(root)
+
+  readonly property var mainInstance: pluginApi?.mainInstance
+
+  implicitWidth: {
+    if (mainInstance?.compactMode || !mainInstance?.tailscaleRunning) {
+      return Style.capsuleHeight
+    }
+    return contentRow.implicitWidth + Style.marginM * 2
+  }
+  implicitHeight: Style.capsuleHeight
+
+  readonly property bool barIsVertical: Settings.data.bar.position === "left" || Settings.data.bar.position === "right"
+
+  color: Style.capsuleColor
+
+  radius: Style.radiusL
+
+  RowLayout {
+    id: contentRow
+    anchors.centerIn: parent
+    spacing: Style.marginS
+    layoutDirection: Qt.LeftToRight
+
+    TailscaleIcon {
+      pointSize: Style.fontSizeL
+      applyUiScale: false
+      crossed: !mainInstance?.tailscaleRunning
+      color: {
+        if (mainInstance?.tailscaleRunning) return Color.mPrimary
+        return mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
+      }
+      opacity: mainInstance?.isRefreshing ? 0.5 : 1.0
+    }
+
+    // Show details when not in compact mode and there's something to show
+    ColumnLayout {
+      visible: !mainInstance?.compactMode && mainInstance?.tailscaleRunning && (mainInstance?.showIpAddress || mainInstance?.showPeerCount)
+      spacing: 2
+      Layout.leftMargin: Style.marginXS
+      Layout.rightMargin: Style.marginS
+
+      // IP Address
+      NText {
+        visible: mainInstance?.showIpAddress && mainInstance?.tailscaleIp
+        text: mainInstance?.tailscaleIp || ""
+        pointSize: Style.fontSizeXS
+        color: mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
+        font.family: Settings.data.ui.fontFixed
+      }
+
+      // Peer count
+      NText {
+        visible: mainInstance?.showPeerCount
+        text: (mainInstance?.peerCount || 0) + " " + (pluginApi?.tr("panel.peers") || "peers")
+        pointSize: Style.fontSizeXS
+        color: mouseArea.containsMouse ? Color.mOnHover : Color.mOnSurface
+      }
+    }
+  }
+
+  NPopupContextMenu {
+    id: contextMenu
+
+    model: [
+      {
+        "label": mainInstance?.tailscaleRunning 
+          ? (pluginApi?.tr("context.disconnect") || "Disconnect")
+          : (pluginApi?.tr("context.connect") || "Connect"),
+        "action": "toggle-tailscale",
+        "icon": mainInstance?.tailscaleRunning ? "plug-x" : "plug",
+        "enabled": mainInstance?.tailscaleInstalled
+      },
+      {
+        "label": pluginApi?.tr("actions.widget-settings") || "Widget Settings",
+        "action": "widget-settings",
+        "icon": "settings"
+      }
+    ]
+
+    onTriggered: action => {
+      var popupMenuWindow = PanelService.getPopupMenuWindow(screen)
+      if (popupMenuWindow) {
+        popupMenuWindow.close()
+      }
+
+      if (action === "widget-settings") {
+        BarService.openPluginSettings(screen, pluginApi.manifest)
+      } else if (action === "toggle-tailscale") {
+        if (mainInstance) {
+          mainInstance.toggleTailscale()
+        }
+      }
+    }
+  }
+
+  MouseArea {
+    id: mouseArea
+    anchors.fill: parent
+    hoverEnabled: true
+    cursorShape: Qt.PointingHandCursor
+    acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+    onEntered: {
+      root.color = Color.mHover
+    }
+
+    onExited: {
+      root.color = Style.capsuleColor
+    }
+
+    onClicked: (mouse) => {
+      if (mouse.button === Qt.LeftButton) {
+        if (pluginApi) {
+          pluginApi.openPanel(root.screen, root)
+        }
+      } else if (mouse.button === Qt.RightButton) {
+        var popupMenuWindow = PanelService.getPopupMenuWindow(screen)
+        if (popupMenuWindow) {
+          popupMenuWindow.showContextMenu(contextMenu)
+          contextMenu.openAtItem(root, screen)
+        }
+      }
+    }
+  }
+}
