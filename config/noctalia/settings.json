@@ -24,7 +24,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "mpv",
-        "visualizerType": "linear",
+        "visualizerType": "mirrored",
         "volumeOverdrive": false,
         "volumeStep": 5
     },
@@ -61,22 +61,22 @@
                     "unfocusedIconsOpacity": 0.8
                 },
                 {
-                    "compactMode": false,
+                    "compactMode": true,
                     "compactShowAlbumArt": true,
                     "compactShowVisualizer": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 145,
+                    "maxWidth": 140,
                     "panelShowAlbumArt": true,
                     "panelShowVisualizer": true,
                     "scrollingMode": "hover",
-                    "showAlbumArt": true,
+                    "showAlbumArt": false,
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
                     "useFixedWidth": false,
-                    "visualizerType": "linear"
+                    "visualizerType": "mirrored"
                 },
                 {
                     "id": "WallpaperSelector"
@@ -357,7 +357,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "wifiDetailsViewMode": "grid",
-        "wifiEnabled": false
+        "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,

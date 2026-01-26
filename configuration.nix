@@ -43,12 +43,19 @@ in
     extraDaemonFlags = [ "--no-logs-no-support" ]; # Disable logging and telemetry
   };
   networking.nftables.enable = true;
-  networking.firewall = {
-    enable = true;
-    # Always allow traffic from your Tailscale network
-    trustedInterfaces = [ "tailscale0" ];
-    # Allow the Tailscale UDP port through the firewall
-    allowedUDPPorts = [ config.services.tailscale.port ];
+  networking = {
+    firewall = {
+      enable = true;
+      # Always allow traffic from your Tailscale network
+      trustedInterfaces = [ "tailscale0" ];
+      # Allow DHCP for libvirtd
+      interfaces.virbr0.allowedUDPPorts = [ 53 67 ];
+      # Allow the Tailscale UDP port through the firewall
+      allowedUDPPorts = [ config.services.tailscale.port ];
+    };
+    # Enable NAT for traffic from the virbr0 interface
+    nat.enable = true;
+    nat.internalInterfaces = [ "virbr0" ];
   };
 
   # Force tailscaled to use nftables (Critical for clean nftables-only systems)
