@@ -1,14 +1,11 @@
 { config, lib, pkgs, ... }:
 
-let
+/*let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-  embeddedTheme = "hyprland_kath"; #for overriding astronaut theme
-  /*themeConfig = {
-      Background = toString ./sddmbg.jpg;
-      BackgroundMode = "fill";
-    };*/
+  embeddedTheme = "japanese_aesthetic"; #for overriding astronaut theme
+    #themeConfig = pathtoconfig; 
   };
-in
+in*/
 
 {
   imports =
@@ -23,8 +20,8 @@ in
 
   services.displayManager.sddm = {
     enable = true;
-    theme = "sddm-astronaut-theme";
-    extraPackages = [ pkgs.sddm-astronaut ];
+    #theme = "sddm-astronaut-theme";
+    #extraPackages = [ pkgs.sddm-astronaut ];
     wayland = {
       enable = true;
     };
@@ -192,7 +189,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
   environment.systemPackages = with pkgs; [
     vim
     wget
-    #librewolf #web browser
+    librewolf #web browser
     lynx #terminal web browser
     brightnessctl #for laptop  brightness
     btop
@@ -210,6 +207,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     geany #text editor
     thunderbird
     hyprlock # lockscreen
+    hyprpolkitagent #polkit agent
     swww #background image
     waypaper #background image
     grim #for screenshoots
@@ -245,7 +243,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
   };
 
  services.blueman.enable = true; # Bluetooth Support
- qt.enable =true; #Needed for Catppuccin themes
+ qt.enable =true; #Needed for theming
 
  fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

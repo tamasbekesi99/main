@@ -24,6 +24,7 @@ in
 imports =[
   ./modules/theme.nix
   ./modules/bash.nix
+  ./modules/zoxide.nix
 ];
 
   home.username = "tommy";
