@@ -33,10 +33,15 @@ imports =[
   
   programs.git = {
     enable = true;
+    signing = {
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";  # Path to your public key
+      signByDefault = true;  # Sign all commits by default
+    };
     settings = { 
       user.name = "tamasbekesi99";
       user.email = "bekesitommy@gmail.com";
-      init.defaultBranch = "main";       
+      init.defaultBranch = "main";
+      gpg.format = "ssh";
     };
   };
 
