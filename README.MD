@@ -1,6 +1,4 @@
-## --------
 ## Warning!
-## --------
 
 This is a hobby project using Nixos with Hyprland and Noctalia-shell.
 
