@@ -6,18 +6,18 @@
         "customLaunchPrefixEnabled": true,
         "enableClipPreview": true,
         "enableClipboardHistory": false,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "pinnedApps": [
         ],
         "position": "top_left",
         "screenshotAnnotationTool": "",
         "showCategories": false,
-        "showIconBackground": false,
+        "showIconBackground": true,
         "sortByMostUsed": false,
         "terminalCommand": "uwsm app kitty",
         "useApp2Unit": false,
-        "viewMode": "list"
+        "viewMode": "grid"
     },
     "audio": {
         "cavaFrameRate": 30,
@@ -51,14 +51,14 @@
                     "colorizeIcons": false,
                     "enableScrollWheel": true,
                     "followFocusedScreen": false,
-                    "groupedBorderOpacity": 1,
+                    "groupedBorderOpacity": 0,
                     "hideUnoccupied": false,
-                    "iconScale": 1,
+                    "iconScale": 0.75,
                     "id": "Workspace",
                     "labelMode": "index",
                     "showApplications": true,
                     "showLabelsOnlyWhenOccupied": false,
-                    "unfocusedIconsOpacity": 0.8
+                    "unfocusedIconsOpacity": 0.3
                 },
                 {
                     "compactMode": true,
@@ -90,8 +90,8 @@
                 },
                 {
                     "customFont": "Iosevka NFP",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatHorizontal": "yyyy-MM-dd ddd HH:mm",
+                    "formatVertical": "HH mm -- MM dd",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": true,
@@ -103,10 +103,10 @@
                     "id": "SystemMonitor",
                     "showCpuTemp": true,
                     "showCpuUsage": true,
-                    "showDiskUsage": false,
+                    "showDiskUsage": true,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
-                    "showMemoryAsPercent": false,
+                    "showMemoryAsPercent": true,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
                     "useMonospaceFont": true,
@@ -181,7 +181,7 @@
                 },
                 {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
+                    "colorizeSystemIcon": "secondary",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
@@ -228,19 +228,19 @@
                 "id": "profile-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "shortcuts-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "audio-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "brightness-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "weather-card"
             },
             {
@@ -280,27 +280,33 @@
     },
     "desktopWidgets": {
         "enabled": false,
-        "gridSnap": false,
+        "gridSnap": true,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                ]
+            }
         ]
     },
     "dock": {
         "animationSpeed": 1,
         "backgroundOpacity": 1,
-        "colorizeIcons": false,
-        "deadOpacity": 0.6,
+        "colorizeIcons": true,
+        "deadOpacity": 0.7000000000000001,
         "displayMode": "always_visible",
         "enabled": false,
-        "floatingRatio": 1,
+        "floatingRatio": 0.2,
         "inactiveIndicators": false,
         "monitors": [
+            "eDP-1"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
         ],
-        "pinnedStatic": false,
+        "pinnedStatic": true,
         "position": "bottom",
-        "size": 1
+        "size": 2
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -357,7 +363,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "wifiDetailsViewMode": "grid",
-        "wifiEnabled": true
+        "wifiEnabled": false
     },
     "nightLight": {
         "autoSchedule": true,
@@ -463,7 +469,7 @@
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 5000,
         "cpuWarningThreshold": 80,
-        "criticalColor": "",
+        "criticalColor": "#ffb4ab",
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 10000,
         "diskWarningThreshold": 80,
@@ -480,8 +486,8 @@
         "tempCriticalThreshold": 90,
         "tempPollingInterval": 5000,
         "tempWarningThreshold": 80,
-        "useCustomColors": false,
-        "warningColor": ""
+        "useCustomColors": true,
+        "warningColor": "#e1c555"
     },
     "templates": {
         "activeTemplates": [
@@ -500,11 +506,11 @@
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.9,
         "panelsAttachedToBar": false,
         "settingsPanelMode": "centered",
-        "tooltipsEnabled": false,
+        "tooltipsEnabled": true,
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
@@ -513,7 +519,7 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "fit",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "monitorDirectories": [
         ],
         "overviewEnabled": false,
@@ -523,7 +529,7 @@
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "solidColor": "#1a1a2e",
-        "transitionDuration": 2000,
+        "transitionDuration": 3000,
         "transitionEdgeSmoothness": 0,
         "transitionType": "random",
         "useSolidColor": false,
@@ -538,6 +544,6 @@
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",
         "wallhavenSorting": "relevance",
-        "wallpaperChangeMode": "random"
+        "wallpaperChangeMode": "alphabetical"
     }
 }

@@ -227,6 +227,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     newsboat #terminal RSS feed reader
     seahorse
     noctalia-shell
+    veracrypt #for cross-platform usb encryption
     ];
  
   hardware.bluetooth = {
