@@ -45,7 +45,7 @@ imports =[
     };
   };
 
-  programs.chromium = {
+ /* programs.chromium = {
     enable = true;
     package = pkgs.brave;
     extensions = [
@@ -54,7 +54,7 @@ imports =[
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
     ];
-  };
+  };*/
 
  home.packages = with pkgs; [
     neovim

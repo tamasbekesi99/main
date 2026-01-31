@@ -11,7 +11,7 @@ programs = {
       ncg = "sudo nix-collect-garbage -d";
       vim = "nvim";
       cat = "bat";
-      cd = "z";
+      ls =  "eza";
       ns = "~/nixos-dotfiles/modules/scripts/nixpkgs.sh";
         #ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };

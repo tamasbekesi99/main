@@ -47,7 +47,7 @@
         "widgets": {
             "center": [
                 {
-                    "characterCount": 2,
+                    "characterCount": 8,
                     "colorizeIcons": false,
                     "enableScrollWheel": true,
                     "followFocusedScreen": false,
@@ -90,10 +90,10 @@
                 },
                 {
                     "customFont": "Iosevka NFP",
-                    "formatHorizontal": "yyyy-MM-dd ddd HH:mm",
-                    "formatVertical": "HH mm -- MM dd",
+                    "formatHorizontal": "MMM dd ddd HH:mm",
+                    "formatVertical": "MM dd -- HH mm",
                     "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "tooltipFormat": "yyyy. MMMM d. HH:mm:ss dddd",
                     "useCustomFont": true,
                     "usePrimaryColor": true
                 },
@@ -216,7 +216,7 @@
         "darkMode": true,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-content",
+        "matugenSchemeType": "scheme-fidelity",
         "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "useWallpaperColors": true
@@ -285,6 +285,24 @@
             {
                 "name": "eDP-1",
                 "widgets": [
+                ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
+                    {
+                        "hideMode": "visible",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 2.8191426800369537,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": true,
+                        "visualizerType": "linear",
+                        "x": 60,
+                        "y": 120
+                    }
                 ]
             }
         ]
@@ -363,7 +381,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "wifiDetailsViewMode": "grid",
-        "wifiEnabled": false
+        "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,
@@ -502,7 +520,7 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "JetBrainsMono NF",
+        "fontDefault": "DejaVu Sans",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font",
         "fontFixedScale": 1,
@@ -511,7 +529,7 @@
         "panelsAttachedToBar": false,
         "settingsPanelMode": "centered",
         "tooltipsEnabled": true,
-        "wifiDetailsViewMode": "grid"
+        "wifiDetailsViewMode": "list"
     },
     "wallpaper": {
         "directory": "/home/tommy/walls/KawaiiWaifu/sketchy",

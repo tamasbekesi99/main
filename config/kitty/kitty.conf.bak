@@ -1,4 +1,4 @@
-include ./kitty-themes/themes/CyberPunk.conf
+#include ./kitty-themes/themes/CyberPunk.conf
 background_opacity 0.8
 font_family monospace
 font_size 16.0
