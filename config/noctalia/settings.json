@@ -1,11 +1,14 @@
 {
     "appLauncher": {
         "autoPasteClipboard": false,
+        "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
+        "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
         "customLaunchPrefix": "uwsm app",
         "customLaunchPrefixEnabled": true,
         "enableClipPreview": true,
         "enableClipboardHistory": false,
+        "enableSettingsSearch": true,
         "iconMode": "native",
         "ignoreMouseInput": false,
         "pinnedApps": [
@@ -25,15 +28,19 @@
         ],
         "preferredPlayer": "mpv",
         "visualizerType": "mirrored",
+        "volumeFeedback": false,
         "volumeOverdrive": false,
         "volumeStep": 5
     },
     "bar": {
         "backgroundOpacity": 0,
+        "barType": "floating",
         "capsuleOpacity": 0.8,
         "density": "spacious",
         "exclusive": true,
         "floating": true,
+        "frameRadius": 12,
+        "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
@@ -41,6 +48,8 @@
         ],
         "outerCorners": true,
         "position": "top",
+        "screenOverrides": [
+        ],
         "showCapsule": true,
         "showOutline": false,
         "useSeparateOpacity": true,
@@ -49,14 +58,19 @@
                 {
                     "characterCount": 8,
                     "colorizeIcons": false,
+                    "emptyColor": "secondary",
                     "enableScrollWheel": true,
+                    "focusedColor": "primary",
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 0,
                     "hideUnoccupied": false,
                     "iconScale": 0.75,
                     "id": "Workspace",
                     "labelMode": "index",
+                    "occupiedColor": "secondary",
+                    "reverseScroll": false,
                     "showApplications": true,
+                    "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 0.3
                 },
@@ -109,6 +123,7 @@
                     "showMemoryAsPercent": true,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
+                    "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": false
                 },
@@ -154,11 +169,13 @@
                     "hideWhenZero": false,
                     "hideWhenZeroUnread": true,
                     "id": "NotificationHistory",
-                    "showUnreadBadge": true
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
                 },
                 {
                     "deviceNativePath": "",
                     "displayMode": "onhover",
+                    "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -214,9 +231,10 @@
     },
     "colorSchemes": {
         "darkMode": true,
+        "generationMethod": "faithful",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "matugenSchemeType": "scheme-fidelity",
+        "monitorForColors": "",
         "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "useWallpaperColors": true
@@ -328,17 +346,21 @@
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": false,
         "animationDisabled": false,
         "animationSpeed": 1,
+        "autoStartAuth": false,
         "avatarImage": "/home/tommy/nixos-dotfiles/profilepik.jpg",
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0,
+        "enableLockScreenCountdown": true,
         "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "language": "",
         "lockOnSuspend": true,
+        "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
@@ -359,6 +381,7 @@
         "screenLock": "",
         "screenUnlock": "",
         "session": "",
+        "startup": "",
         "wallpaperChange": ""
     },
     "location": {
@@ -381,7 +404,7 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "wifiDetailsViewMode": "grid",
-        "wifiEnabled": true
+        "wifiEnabled": false
     },
     "nightLight": {
         "autoSchedule": true,
@@ -482,7 +505,7 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 41,
+    "settingsVersion": 46,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 5000,
@@ -501,6 +524,8 @@
         "memPollingInterval": 5000,
         "memWarningThreshold": 80,
         "networkPollingInterval": 3000,
+        "swapCriticalThreshold": 90,
+        "swapWarningThreshold": 80,
         "tempCriticalThreshold": 90,
         "tempPollingInterval": 5000,
         "tempWarningThreshold": 80,
@@ -514,7 +539,7 @@
                 "id": "hyprland"
             }
         ],
-        "enableUserTemplates": false
+        "enableUserTheming": false
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
@@ -532,6 +557,7 @@
         "wifiDetailsViewMode": "list"
     },
     "wallpaper": {
+        "automationEnabled": true,
         "directory": "/home/tommy/walls/KawaiiWaifu/sketchy",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
@@ -542,16 +568,16 @@
         ],
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
-        "randomEnabled": true,
         "randomIntervalSec": 900,
-        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
         "solidColor": "#1a1a2e",
         "transitionDuration": 3000,
         "transitionEdgeSmoothness": 0,
         "transitionType": "random",
         "useSolidColor": false,
         "useWallhaven": false,
+        "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
