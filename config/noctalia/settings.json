@@ -9,6 +9,7 @@
         "enableClipPreview": true,
         "enableClipboardHistory": false,
         "enableSettingsSearch": true,
+        "enableWindowsSearch": true,
         "iconMode": "native",
         "ignoreMouseInput": false,
         "pinnedApps": [
@@ -33,11 +34,13 @@
         "volumeStep": 5
     },
     "bar": {
+        "autoHideDelay": 500,
+        "autoShowDelay": 150,
         "backgroundOpacity": 0,
         "barType": "floating",
         "capsuleOpacity": 0.8,
         "density": "spacious",
-        "exclusive": true,
+        "displayMode": "always_visible",
         "floating": true,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -115,8 +118,10 @@
                     "compactMode": true,
                     "diskPath": "/",
                     "id": "SystemMonitor",
+                    "showCpuFreq": false,
                     "showCpuTemp": true,
                     "showCpuUsage": true,
+                    "showDiskAsFree": false,
                     "showDiskUsage": true,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
@@ -537,9 +542,17 @@
             {
                 "enabled": true,
                 "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
             }
         ],
-        "enableUserTheming": false
+        "enableUserTheming": true
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
@@ -572,6 +585,7 @@
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "solidColor": "#1a1a2e",
+        "sortOrder": "name",
         "transitionDuration": 3000,
         "transitionEdgeSmoothness": 0,
         "transitionType": "random",

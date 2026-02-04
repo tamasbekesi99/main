@@ -10,10 +10,8 @@ let
     nvim = "nvim";
     rofi = "rofi";
     kitty = "kitty";
-    waybar = "waybar";
     quickshell = "quickshell";
     yazi = "yazi";
-    swaync = "swaync";
     neomutt = "neomutt";
     noctalia = "noctalia";
   };

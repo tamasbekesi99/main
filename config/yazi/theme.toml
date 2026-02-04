@@ -1,9 +1,3 @@
 [flavor]
-#dark = "neon"
-#dark = "tokyo-night"
-#dark = "rose-pine"
-#dark = "ashen"
-#dark = "ayu-dark"
-#dark = "bluloco-dark"
-#dark = "eldritch"
-#dark = "flexoki-dark"
+dark  = "noctalia"
+light = "noctalia"

@@ -16,7 +16,7 @@ programs = {
         #ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     initExtra = ''
-      export PS1='\[\e[35m\]\[\e[0m\] in \[\e[36m\]\[\e[0m\] \w \$ '
+      export PS1='\[\e[35m\]\[\e[0m\] in \[\e[36m\]\[\e[0m\] \[\e[38;5;27m\]\w\[\e[0m\] \$ '
       nitch
     '';
     profileExtra = ''
@@ -24,11 +24,6 @@ programs = {
         exec uwsm start -S hyprland-uwsm.desktop
       fi
     '';
-  };
-
-  zoxide = {
-    enable = true;
-    enableBashIntegration = true;
   };
 };
 }

@@ -190,7 +190,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     vim
     wget
     librewolf #web browser
-    lynx #terminal web browser
     brightnessctl #for laptop  brightness
     btop
     mpv #terminal video player
@@ -200,8 +199,6 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     pavucontrol #GUI for the audio
     yazi #teminal file manager
     kitty #terminal
-    waybar
-    hyprpaper #background image
     keepassxc
     udiskie #for mounting USB
     geany #text editor
@@ -209,12 +206,9 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     hyprlock # lockscreen
     hyprpolkitagent #polkit agent
     swww #background image
-    waypaper #background image
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
-    swaynotificationcenter
-    signal-desktop
     nix-output-monitor
     unzip
     sddm-astronaut #SDDM theme
@@ -225,7 +219,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     yt-dlp
     neomutt #terminal email program
     newsboat #terminal RSS feed reader
-    seahorse
+    seahorse #gnupg GUI
     noctalia-shell
     veracrypt #for cross-platform usb encryption
     ];
