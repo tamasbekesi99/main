@@ -28,7 +28,7 @@ in*/
   };
   
   # Enable Flatpak support
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 
   networking.hostName = "hyprland-btw"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -187,9 +187,9 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
 */
 
   environment.systemPackages = with pkgs; [
-    vim
     wget
     librewolf #web browser
+    lynx #TUI web browser
     brightnessctl #for laptop  brightness
     btop
     mpv #terminal video player

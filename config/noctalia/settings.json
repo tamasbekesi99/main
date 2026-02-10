@@ -48,10 +48,165 @@
         "marginHorizontal": 4,
         "marginVertical": 4,
         "monitors": [
+            "HDMI-A-1",
+            "eDP-1"
         ],
         "outerCorners": true,
         "position": "top",
         "screenOverrides": [
+            {
+                "density": "spacious",
+                "enabled": true,
+                "name": "HDMI-A-1",
+                "position": "right",
+                "widgets": {
+                    "center": [
+                        {
+                            "characterCount": 8,
+                            "colorizeIcons": false,
+                            "emptyColor": "secondary",
+                            "enableScrollWheel": true,
+                            "focusedColor": "primary",
+                            "followFocusedScreen": false,
+                            "groupedBorderOpacity": 0,
+                            "hideUnoccupied": false,
+                            "iconScale": 0.75,
+                            "id": "Workspace",
+                            "labelMode": "index",
+                            "occupiedColor": "secondary",
+                            "reverseScroll": false,
+                            "showApplications": true,
+                            "showBadge": true,
+                            "showLabelsOnlyWhenOccupied": false,
+                            "unfocusedIconsOpacity": 0.3
+                        },
+                        {
+                            "compactMode": true,
+                            "compactShowAlbumArt": true,
+                            "compactShowVisualizer": false,
+                            "hideMode": "hidden",
+                            "hideWhenIdle": false,
+                            "id": "MediaMini",
+                            "maxWidth": 140,
+                            "panelShowAlbumArt": true,
+                            "panelShowVisualizer": true,
+                            "scrollingMode": "hover",
+                            "showAlbumArt": false,
+                            "showArtistFirst": true,
+                            "showProgressRing": true,
+                            "showVisualizer": true,
+                            "useFixedWidth": false,
+                            "visualizerType": "mirrored"
+                        }
+                    ],
+                    "left": [
+                        {
+                            "id": "WallpaperSelector"
+                        },
+                        {
+                            "customFont": "Iosevka NFP",
+                            "formatHorizontal": "MMM dd ddd HH:mm",
+                            "formatVertical": "MM dd --- HH mm",
+                            "id": "Clock",
+                            "tooltipFormat": "yyyy. MMMM d. HH:mm:ss dddd",
+                            "useCustomFont": true,
+                            "usePrimaryColor": true
+                        },
+                        {
+                            "compactMode": true,
+                            "diskPath": "/",
+                            "id": "SystemMonitor",
+                            "showCpuFreq": false,
+                            "showCpuTemp": true,
+                            "showCpuUsage": true,
+                            "showDiskAsFree": false,
+                            "showDiskUsage": true,
+                            "showGpuTemp": false,
+                            "showLoadAverage": false,
+                            "showMemoryAsPercent": true,
+                            "showMemoryUsage": true,
+                            "showNetworkStats": false,
+                            "showSwapUsage": false,
+                            "useMonospaceFont": true,
+                            "usePrimaryColor": false
+                        },
+                        {
+                            "colorizeIcons": false,
+                            "hideMode": "hidden",
+                            "id": "ActiveWindow",
+                            "maxWidth": 180,
+                            "scrollingMode": "hover",
+                            "showIcon": true,
+                            "useFixedWidth": false
+                        }
+                    ],
+                    "right": [
+                        {
+                            "blacklist": [
+                            ],
+                            "colorizeIcons": false,
+                            "drawerEnabled": false,
+                            "hidePassive": false,
+                            "id": "Tray",
+                            "pinned": [
+                            ]
+                        },
+                        {
+                            "defaultSettings": {
+                                "compactMode": false,
+                                "defaultPeerAction": "copy-ip",
+                                "hideDisconnected": false,
+                                "pingCount": 5,
+                                "refreshInterval": 5000,
+                                "showIpAddress": true,
+                                "showPeerCount": true,
+                                "terminalCommand": ""
+                            },
+                            "id": "plugin:tailscale"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "id": "Network"
+                        },
+                        {
+                            "hideWhenZero": false,
+                            "hideWhenZeroUnread": true,
+                            "id": "NotificationHistory",
+                            "showUnreadBadge": true,
+                            "unreadBadgeColor": "primary"
+                        },
+                        {
+                            "deviceNativePath": "",
+                            "displayMode": "onhover",
+                            "hideIfIdle": false,
+                            "hideIfNotDetected": true,
+                            "id": "Battery",
+                            "showNoctaliaPerformance": false,
+                            "showPowerProfiles": true,
+                            "warningThreshold": 20
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "id": "Microphone",
+                            "middleClickCommand": "pwvucontrol || pavucontrol"
+                        },
+                        {
+                            "displayMode": "onhover",
+                            "id": "Volume",
+                            "middleClickCommand": "pwvucontrol || pavucontrol"
+                        },
+                        {
+                            "colorizeDistroLogo": false,
+                            "colorizeSystemIcon": "secondary",
+                            "customIconPath": "",
+                            "enableColorization": true,
+                            "icon": "noctalia",
+                            "id": "ControlCenter",
+                            "useDistroLogo": false
+                        }
+                    ]
+                }
+            }
         ],
         "showCapsule": true,
         "showOutline": false,
@@ -94,16 +249,11 @@
                     "showVisualizer": true,
                     "useFixedWidth": false,
                     "visualizerType": "mirrored"
-                },
-                {
-                    "id": "WallpaperSelector"
                 }
             ],
             "left": [
                 {
-                    "icon": "rocket",
-                    "id": "Launcher",
-                    "usePrimaryColor": false
+                    "id": "WallpaperSelector"
                 },
                 {
                     "customFont": "Iosevka NFP",
@@ -198,10 +348,6 @@
                     "middleClickCommand": "pwvucontrol || pavucontrol"
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Brightness"
-                },
-                {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "secondary",
                     "customIconPath": "",
@@ -251,7 +397,7 @@
                 "id": "profile-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "shortcuts-card"
             },
             {
@@ -259,7 +405,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -467,7 +613,7 @@
         "countdownDuration": 3000,
         "enableCountdown": true,
         "largeButtonsLayout": "grid",
-        "largeButtonsStyle": false,
+        "largeButtonsStyle": true,
         "position": "top_right",
         "powerOptions": [
             {
@@ -492,7 +638,7 @@
                 "action": "suspend",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": false
             },
             {
                 "action": "reboot",
@@ -546,10 +692,6 @@
             {
                 "enabled": true,
                 "id": "yazi"
-            },
-            {
-                "enabled": true,
-                "id": "kitty"
             }
         ],
         "enableUserTheming": true
@@ -576,7 +718,7 @@
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "fit",
-        "hideWallpaperFilenames": true,
+        "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
         "overviewEnabled": false,
