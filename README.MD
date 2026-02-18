@@ -19,8 +19,6 @@ When downloaded, the **hardware.nix file should be replaced** with the system on
 Replace the hostname with your own and run:
 
 ```NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME```
-make config changes in nixos-dotfiles/config also home.nix
-When Downloaded, hardware.nix file should be replaced with the system one.
 
 ### **TODO**
 - add abook isync msmtp notmuch urlscan support for neomutt
