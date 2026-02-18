@@ -9,10 +9,15 @@ This is just a test readme.
 In the future I plan to update it so anyone can easily install and modify it.
 
 ### **INSTALL**
-Clone the repo
+Clone the repo:
+
 ```git clone https://github.com/tamasbekesi99/main```
-Edit files ???
-Replace the hostname with your own and run
+
+Make config changes in **nixos-dotfiles/configuratoin** also **home.nix**
+When downloaded, the **hardware.nix file should be replaced** with the system one.
+
+Replace the hostname with your own and run:
+
 ```NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME```
 make config changes in nixos-dotfiles/config also home.nix
 When Downloaded, hardware.nix file should be replaced with the system one.
