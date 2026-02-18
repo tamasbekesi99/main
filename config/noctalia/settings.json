@@ -40,17 +40,17 @@
         "autoHideDelay": 500,
         "autoShowDelay": 150,
         "backgroundOpacity": 0,
-        "barType": "floating",
-        "capsuleColorKey": "none",
-        "capsuleOpacity": 0.6,
+        "barType": "simple",
+        "capsuleColorKey": "secondary",
+        "capsuleOpacity": 0.3,
         "density": "spacious",
         "displayMode": "always_visible",
-        "floating": true,
+        "floating": false,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginHorizontal": 2,
+        "marginVertical": 2,
         "monitors": [
             "eDP-1",
             "HDMI-A-1"
@@ -167,6 +167,19 @@
                     ]
                 },
                 {
+                    "defaultSettings": {
+                        "compactMode": false,
+                        "defaultPeerAction": "copy-ip",
+                        "hideDisconnected": false,
+                        "pingCount": 5,
+                        "refreshInterval": 5000,
+                        "showIpAddress": true,
+                        "showPeerCount": true,
+                        "terminalCommand": ""
+                    },
+                    "id": "plugin:tailscale"
+                },
+                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Network",
@@ -205,7 +218,7 @@
                 },
                 {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "primary",
+                    "colorizeSystemIcon": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
