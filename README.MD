@@ -1,6 +1,6 @@
 ## Warning!
 
-This is a hobby project using Nixos with Hyprland and Noctalia-shell.
+This is a hobby project using Nixos with Hyprland and Noctalia-shell (my simple quickshell bar was replaces by it).
 
 ![My image](./swappy-20260125_144931.png)
 ![My image2](./swappy-20260125_161406.png)
@@ -8,6 +8,12 @@ This is a hobby project using Nixos with Hyprland and Noctalia-shell.
 This is just a test readme.
 In the future I plan to update it so anyone can easily install and modify it.
 
+### **INSTALL**
+Clone the repo
+´git clone https://github.com/tamasbekesi99/main´
+Edit files ???
+Replace the hostname with your own and run
+´NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME´
 make config changes in nixos-dotfiles/config also home.nix
 When Downloaded, hardware.nix file should be replaced with the system one.
 
