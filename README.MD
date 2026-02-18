@@ -10,10 +10,10 @@ In the future I plan to update it so anyone can easily install and modify it.
 
 ### **INSTALL**
 Clone the repo
-´git clone https://github.com/tamasbekesi99/main´
+```git clone https://github.com/tamasbekesi99/main```
 Edit files ???
 Replace the hostname with your own and run
-´NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME´
+```NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME```
 make config changes in nixos-dotfiles/config also home.nix
 When Downloaded, hardware.nix file should be replaced with the system one.
 
