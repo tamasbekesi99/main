@@ -5,8 +5,6 @@
 
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    swww.url = "github:LGFae/swww";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

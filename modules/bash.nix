@@ -7,6 +7,7 @@ programs = {
     shellAliases = {
       btw = "echo i use nixos, btw";
       #nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw";
+      fu = "cd ~/nixos-dotfiles/ && sudo nix flake update";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#hyprland-btw |& sudo nom";
       ncg = "sudo nix-collect-garbage -d";
       vim = "nvim";
@@ -16,7 +17,7 @@ programs = {
         #ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     initExtra = ''
-      export PS1='\[\e[35m\]\[\e[0m\] in \[\e[36m\]\[\e[0m\] \[\e[38;5;27m\]\w\[\e[0m\] \$ '
+      export PS1='\[\e[35m\]\[\e[0m\] in \[\e[36m\]\[\e[0m\] \[\e[38;5;27m\]\w\[\e[0m\] \$ '
       nitch
     '';
     profileExtra = ''

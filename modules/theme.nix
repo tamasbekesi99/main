@@ -19,7 +19,7 @@
     };
   };
 
-  xdg.configFile."gtk-3.0/settings.ini".text = ''
+ /* xdg.configFile."gtk-3.0/settings.ini".text = ''
     [Settings]
     gtk-theme-name=Adwaita
     gtk-icon-theme-name=Papirus-Dark
@@ -34,6 +34,7 @@
     gtk-cursor-theme-name=Adwaita
     gtk-cursor-theme-size=24
   '';
+  */
   xdg.configFile."mimeapps.list".force = true;
 
   #Env var managed by UWSM

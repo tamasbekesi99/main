@@ -205,23 +205,22 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     thunderbird
     hyprlock # lockscreen
     hyprpolkitagent #polkit agent
-    swww #background image
+    #swww #background image
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
     nix-output-monitor
     unzip
-    sddm-astronaut #SDDM theme
+    #sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
     quickshell
     ani-cli #anime in the terminal
     ffmpeg #codecs
-    yt-dlp
+    yt-dlp #ani-cli optional
     neomutt #terminal email program
     newsboat #terminal RSS feed reader
     seahorse #gnupg GUI
     noctalia-shell
-    veracrypt #for cross-platform usb encryption
     ];
  
   hardware.bluetooth = {

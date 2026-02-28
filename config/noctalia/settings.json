@@ -41,8 +41,8 @@
         "autoShowDelay": 150,
         "backgroundOpacity": 0,
         "barType": "simple",
-        "capsuleColorKey": "secondary",
-        "capsuleOpacity": 0.3,
+        "capsuleColorKey": "none",
+        "capsuleOpacity": 0.5,
         "density": "spacious",
         "displayMode": "always_visible",
         "floating": false,
@@ -83,7 +83,6 @@
                     "labelMode": "index",
                     "occupiedColor": "secondary",
                     "pillSize": 0.6,
-                    "reverseScroll": false,
                     "showApplications": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
@@ -141,7 +140,8 @@
                     "showNetworkStats": false,
                     "showSwapUsage": false,
                     "textColor": "none",
-                    "useMonospaceFont": true
+                    "useMonospaceFont": true,
+                    "usePadding": false
                 },
                 {
                     "colorizeIcons": false,
@@ -196,7 +196,7 @@
                 {
                     "deviceNativePath": "__default__",
                     "displayMode": "icon-hover",
-                    "hideIfIdle": false,
+                    "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": true,
@@ -340,6 +340,19 @@
                         "visualizerType": "linear",
                         "x": 60,
                         "y": 120
+                    },
+                    {
+                        "clockColor": "none",
+                        "clockStyle": "minimal",
+                        "customFont": "",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 3.5181103675442187,
+                        "showBackground": true,
+                        "useCustomFont": false,
+                        "x": 1680,
+                        "y": 0
                     }
                 ]
             }
@@ -351,9 +364,10 @@
         "colorizeIcons": true,
         "deadOpacity": 0.7000000000000001,
         "displayMode": "always_visible",
+        "dockType": "floating",
         "enabled": false,
         "floatingRatio": 0.2,
-        "inactiveIndicators": false,
+        "inactiveIndicators": true,
         "monitors": [
             "eDP-1"
         ],
@@ -362,6 +376,8 @@
         ],
         "pinnedStatic": true,
         "position": "bottom",
+        "showFrameIndicator": true,
+        "sitOnFrame": false,
         "size": 2
     },
     "general": {
@@ -373,8 +389,8 @@
         "avatarImage": "/home/tommy/nixos-dotfiles/profilepik.jpg",
         "boxRadiusRatio": 1,
         "clockFormat": "",
-        "clockStyle": "digital",
-        "compactLockScreen": true,
+        "clockStyle": "analog",
+        "compactLockScreen": false,
         "dimmerOpacity": 0,
         "enableLockScreenCountdown": true,
         "enableShadows": false,
@@ -393,6 +409,9 @@
             "keyLeft": [
                 "Left"
             ],
+            "keyRemove": [
+                "Del"
+            ],
             "keyRight": [
                 "Right"
             ],
@@ -409,6 +428,7 @@
         ],
         "lockScreenTint": 0,
         "radiusRatio": 1,
+        "reverseScroll": false,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
         "shadowDirection": "bottom_right",
@@ -446,10 +466,12 @@
         "weatherShowEffects": true
     },
     "network": {
+        "airplaneModeEnabled": false,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
+        "disableDiscoverability": false,
         "wifiDetailsViewMode": "grid",
         "wifiEnabled": false
     },
@@ -460,13 +482,16 @@
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4000"
+        "nightTemp": "6000"
     },
     "notifications": {
         "backgroundOpacity": 1,
+        "clearDismissed": true,
         "criticalUrgencyDuration": 15,
+        "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
+        "enableMarkdown": false,
         "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
@@ -521,21 +546,21 @@
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "6"
+                "keybind": "1"
             },
             {
                 "action": "logout",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "5"
+                "keybind": "2"
             },
             {
                 "action": "lock",
-                "command": "hyprlock",
+                "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "1"
+                "keybind": "3"
             },
             {
                 "action": "reboot",
@@ -549,41 +574,43 @@
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": false,
-                "keybind": "2"
+                "keybind": ""
             },
             {
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": false,
-                "keybind": "3"
+                "keybind": ""
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
             }
         ],
-        "showHeader": true
+        "showHeader": true,
+        "showKeybinds": true
     },
     "settingsVersion": 53,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
         "cpuCriticalThreshold": 90,
-        "cpuPollingInterval": 1000,
         "cpuWarningThreshold": 80,
         "criticalColor": "#ffb4ab",
         "diskAvailCriticalThreshold": 10,
         "diskAvailWarningThreshold": 20,
         "diskCriticalThreshold": 90,
-        "diskPollingInterval": 10000,
         "diskWarningThreshold": 80,
         "enableDgpuMonitoring": false,
         "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 90,
-        "gpuPollingInterval": 3000,
         "gpuWarningThreshold": 80,
-        "loadAvgPollingInterval": 5000,
         "memCriticalThreshold": 90,
-        "memPollingInterval": 1000,
         "memWarningThreshold": 80,
-        "networkPollingInterval": 1000,
         "swapCriticalThreshold": 90,
         "swapWarningThreshold": 80,
         "tempCriticalThreshold": 90,
@@ -600,6 +627,14 @@
             {
                 "enabled": true,
                 "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "gtk"
             }
         ],
         "enableUserTheming": true
