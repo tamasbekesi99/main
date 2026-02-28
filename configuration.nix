@@ -236,15 +236,17 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     };
   };
 
- services.blueman.enable = true; # Bluetooth Support
- qt.enable =true; #Needed for theming
+  services.blueman.enable = true; # Bluetooth Support
+  qt.enable =true; #Needed for theming
 
- fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka
- ];
+  ];
 
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  services.gnome.gnome-keyring.enable = true;
 
   programs.gnupg.agent ={
     enable = true;
