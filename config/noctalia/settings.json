@@ -24,7 +24,7 @@
         "sortByMostUsed": false,
         "terminalCommand": "uwsm app kitty -e",
         "useApp2Unit": false,
-        "viewMode": "grid"
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 30,
@@ -152,6 +152,11 @@
                     "showIcon": true,
                     "textColor": "none",
                     "useFixedWidth": false
+                },
+                {
+                    "icon": "rocket",
+                    "iconColor": "none",
+                    "id": "Launcher"
                 }
             ],
             "right": [
