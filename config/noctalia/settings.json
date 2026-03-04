@@ -317,7 +317,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": true,
         "monitorWidgets": [
             {
@@ -329,28 +329,15 @@
                 "name": "HDMI-A-1",
                 "widgets": [
                     {
-                        "hideMode": "visible",
-                        "id": "MediaPlayer",
-                        "roundedCorners": true,
-                        "scale": 2.8191426800369537,
-                        "showAlbumArt": true,
-                        "showBackground": true,
-                        "showButtons": true,
-                        "showVisualizer": true,
-                        "visualizerType": "linear",
-                        "x": 60,
-                        "y": 120
-                    },
-                    {
                         "clockColor": "none",
                         "clockStyle": "minimal",
-                        "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
+                        "customFont": "Iosevka NF",
+                        "format": "HH:mm\\n yyyy.MM.dd.\\ndddd",
                         "id": "Clock",
                         "roundedCorners": true,
                         "scale": 3.5181103675442187,
                         "showBackground": true,
-                        "useCustomFont": false,
+                        "useCustomFont": true,
                         "x": 1680,
                         "y": 0
                     }
@@ -466,7 +453,7 @@
         "weatherShowEffects": true
     },
     "network": {
-        "airplaneModeEnabled": false,
+        "airplaneModeEnabled": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 10000,
