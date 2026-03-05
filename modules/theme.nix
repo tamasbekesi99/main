@@ -30,7 +30,7 @@
     };
 
     font = {
-      name = "Sans";
+      name = "DejaVu Sans";
       size = 12;
     };
   };
@@ -69,7 +69,7 @@
   xdg.configFile."uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
   
   home.sessionVariables = {
-    XCURSOR_THEME = "Adwaita";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
     XCURSOR_SIZE = "36";
     WLR_NO_HARDWARE_CURSORS = 1; #for gaming
     QT_QPA_PLATFORMTHEME = "gtk3";

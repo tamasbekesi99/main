@@ -97,6 +97,8 @@ in*/
 #    };
 #  };
 
+#Steam
+
   hardware.steam-hardware.enable = true;
 
   programs.steam = {
@@ -104,7 +106,20 @@ in*/
     remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = false; # Open ports in the firewall for Steam Local Network Game Transfers
+#    gamescopeSession.enable = true;
+#    extraCompatPackages = [pkgs.proton-ge-bin];
   };
+
+ /* programs.gamescope = {
+      enable = true;
+      capSysNice = true;
+      args = [
+        "--rt"
+        "--expose-wayland"
+      ];
+  };
+  */
+
 
   services.pipewire = {
      enable = true;

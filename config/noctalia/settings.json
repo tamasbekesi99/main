@@ -152,11 +152,6 @@
                     "showIcon": true,
                     "textColor": "none",
                     "useFixedWidth": false
-                },
-                {
-                    "icon": "rocket",
-                    "iconColor": "none",
-                    "id": "Launcher"
                 }
             ],
             "right": [
@@ -623,10 +618,6 @@
             {
                 "enabled": true,
                 "id": "qt"
-            },
-            {
-                "enabled": true,
-                "id": "gtk"
             }
         ],
         "enableUserTheming": true
