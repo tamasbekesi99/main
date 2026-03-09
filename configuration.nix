@@ -106,11 +106,11 @@ in*/
     remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = false; # Open ports in the firewall for Steam Local Network Game Transfers
-#    gamescopeSession.enable = true;
-#    extraCompatPackages = [pkgs.proton-ge-bin];
+    gamescopeSession.enable = true;
+    extraCompatPackages = [pkgs.proton-ge-bin];
   };
 
- /* programs.gamescope = {
+  programs.gamescope = {
       enable = true;
       capSysNice = true;
       args = [
@@ -118,7 +118,6 @@ in*/
         "--expose-wayland"
       ];
   };
-  */
 
 
   services.pipewire = {
@@ -157,6 +156,9 @@ in*/
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["tommy"];
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu = {
+    swtpm.enable = true;
+  };
   virtualisation.spiceUSBRedirection.enable = true;
 
   #user
