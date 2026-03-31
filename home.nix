@@ -9,6 +9,7 @@ let
     hypr = "hypr";
     nvim = "nvim";
     rofi = "rofi";
+    fuzzel = "fuzzel";
     kitty = "kitty";
     quickshell = "quickshell";
     yazi = "yazi";
@@ -70,6 +71,8 @@ imports =[
     gcc
     nitch
     rofi
+    fuzzel
+    app2unit
     pcmanfm
     nix-search-tv
   ];

@@ -4,11 +4,13 @@
         "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
         "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
-        "customLaunchPrefix": "uwsm app",
+        "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": true,
         "density": "default",
         "enableClipPreview": true,
+        "enableClipboardChips": true,
         "enableClipboardHistory": false,
+        "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
@@ -22,8 +24,7 @@
         "showCategories": false,
         "showIconBackground": true,
         "sortByMostUsed": false,
-        "terminalCommand": "uwsm app kitty -e",
-        "useApp2Unit": false,
+        "terminalCommand": "",
         "viewMode": "list"
     },
     "audio": {
@@ -31,6 +32,7 @@
         ],
         "preferredPlayer": "mpv",
         "spectrumFrameRate": 30,
+        "spectrumMirrored": true,
         "visualizerType": "mirrored",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
@@ -48,7 +50,6 @@
         "density": "spacious",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "floating": false,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -195,10 +196,12 @@
                         "compactMode": false,
                         "defaultPeerAction": "copy-ip",
                         "hideDisconnected": false,
+                        "hideMullvadExitNodes": true,
                         "pingCount": 5,
                         "refreshInterval": 5000,
                         "showIpAddress": true,
                         "showPeerCount": true,
+                        "sshUsername": "",
                         "terminalCommand": ""
                     },
                     "id": "plugin:tailscale"
@@ -385,8 +388,10 @@
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 3,
+        "launcherIcon": "",
         "launcherIconColor": "none",
         "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
         "monitors": [
             "eDP-1"
         ],
@@ -409,7 +414,7 @@
         "avatarImage": "/home/tommy/nixos-dotfiles/profilepik.jpg",
         "boxRadiusRatio": 1,
         "clockFormat": "",
-        "clockStyle": "analog",
+        "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0,
         "enableBlurBehind": true,
@@ -462,9 +467,10 @@
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
         "showSessionButtonsOnLockScreen": true,
-        "telemetryEnabled": false
+        "telemetryEnabled": true
     },
     "hooks": {
+        "colorGeneration": "",
         "darkModeChange": "",
         "enabled": false,
         "performanceModeDisabled": "",
@@ -511,9 +517,8 @@
         "bluetoothRssiPollIntervalMs": 10000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "grid",
-        "wifiEnabled": false
+        "networkPanelView": "ethernet",
+        "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
         "autoSchedule": true,
@@ -576,7 +581,8 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": true
+        "autoUpdate": true,
+        "notifyUpdates": true
     },
     "sessionMenu": {
         "countdownDuration": 3000,
@@ -645,7 +651,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 57,
+    "settingsVersion": 59,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -711,6 +717,16 @@
         "fillMode": "fit",
         "hideWallpaperFilenames": true,
         "monitorDirectories": [
+            {
+                "directory": "/home/tommy/walls/KawaiiWaifu/sketchy",
+                "name": "eDP-1",
+                "wallpaper": ""
+            },
+            {
+                "directory": "/home/tommy/walls/KawaiiWaifu/sketchy",
+                "name": "HDMI-A-1",
+                "wallpaper": ""
+            }
         ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
@@ -724,7 +740,15 @@
         "sortOrder": "name",
         "transitionDuration": 3000,
         "transitionEdgeSmoothness": 0,
-        "transitionType": "random",
+        "transitionType": [
+            "fade",
+            "disc",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
+        ],
+        "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
         "viewMode": "browse",
