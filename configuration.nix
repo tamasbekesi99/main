@@ -30,6 +30,14 @@ in*/
   # Enable Flatpak support
   # services.flatpak.enable = true;
 
+  #BTRFS options
+
+  fileSystems = {
+    "/".options = [ "compress=zstd" ];
+    "/home".options = [ "compress=zstd" ];
+    "/nix".options = [ "compress=zstd" "noatime" ];
+  };
+
   networking.hostName = "hyprland-btw"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
  
