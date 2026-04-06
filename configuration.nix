@@ -86,7 +86,7 @@ in*/
   };
   
   #Enable dank material shell
-  #programs.dms-shell.enable = true;
+  programs.dms-shell.enable = true;
 
   #For laptop power managment
   services.power-profiles-daemon.enable = true;
@@ -230,7 +230,8 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     thunderbird
     hyprlock # lockscreen
     hyprpolkitagent #polkit agent
-    #swww #background image
+    awww #background image
+    waypaper
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
@@ -245,7 +246,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     neomutt #terminal email program
     newsboat #terminal RSS feed reader
     seahorse #gnupg GUI
-    noctalia-shell
+    #noctalia-shell
     ];
  
   hardware.bluetooth = {

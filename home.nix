@@ -15,6 +15,7 @@ let
     yazi = "yazi";
     neomutt = "neomutt";
     noctalia = "noctalia";
+    waypaper = "waypaper";
   };
 in
 
