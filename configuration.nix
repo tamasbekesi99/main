@@ -230,8 +230,8 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     thunderbird
     hyprlock # lockscreen
     hyprpolkitagent #polkit agent
-    awww #background image
-    waypaper
+    #awww #background image
+    #waypaper
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
