@@ -239,7 +239,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     unzip
     #sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
-    quickshell
+    #quickshell
     ani-cli #anime in the terminal
     ffmpeg #codecs
     yt-dlp #ani-cli optional

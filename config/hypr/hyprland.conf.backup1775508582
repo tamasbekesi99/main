@@ -254,6 +254,5 @@ bind =,XF86MonBrightnessUp,exec,brightnessctl set +5%
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
-#source = ~/.config/hypr/noctalia/noctalia-colors.conf
+source = ~/.config/hypr/noctalia/noctalia-colors.conf
 
-source = ./dms/colors.conf
