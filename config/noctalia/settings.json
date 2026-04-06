@@ -714,7 +714,7 @@
         "automationEnabled": true,
         "directory": "/home/tommy/walls/KawaiiWaifu/sketchy",
         "enableMultiMonitorDirectories": false,
-        "enabled": true,
+        "enabled": false,
         "favorites": [
         ],
         "fillColor": "#000000",
