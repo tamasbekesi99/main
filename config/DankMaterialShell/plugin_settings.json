@@ -1,0 +1,6 @@
+{
+  "tailscale": {
+    "enabled": true,
+    "refreshInterval": 10
+  }
+}

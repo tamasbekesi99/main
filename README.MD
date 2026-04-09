@@ -1,6 +1,6 @@
 ## Warning!
 
-This is a hobby project using Nixos with Hyprland and Noctalia-shell (my simple quickshell bar was replaces by it).
+This is a hobby project using Nixos with Hyprland and ~~Noctalia-shell~~ DankMaterialShell (my simple quickshell bar was replaces by it).
 
 ![My image](./swappy-20260125_144931.png)
 ![My image2](./swappy-20260125_161406.png)

@@ -8,14 +8,15 @@ let
   configs = {
     hypr = "hypr";
     nvim = "nvim";
-    rofi = "rofi";
+    #rofi = "rofi";
     fuzzel = "fuzzel";
     kitty = "kitty";
-    quickshell = "quickshell";
+    #quickshell = "quickshell";
     yazi = "yazi";
+    DankMaterialShell ="DankMaterialShell";
     neomutt = "neomutt";
-    noctalia = "noctalia";
-    waypaper = "waypaper";
+    #noctalia = "noctalia";
+    #waypaper = "waypaper";
   };
 in
 
@@ -71,7 +72,7 @@ imports =[
     jq #for the quickshell json script in shell.qml
     gcc
     nitch
-    rofi
+    #rofi
     fuzzel
     app2unit
     pcmanfm
