@@ -232,6 +232,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
     hyprpolkitagent #polkit agent
     #awww #background image
     #waypaper
+    #hyprshot #for screenshoots
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
