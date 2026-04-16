@@ -8,7 +8,7 @@ This is a hobby project using Nixos with Hyprland and ~~Noctalia-shell~~ DankMat
 This is just a test readme.
 In the future I plan to update it so anyone can easily install and modify it.
 
-Wallpapers from [Wallhaven] (https://wallhaven.cc/).
+Wallpapers from [Wallhaven](https://wallhaven.cc/)
 
 ### **INSTALL**
 Clone the repo:
