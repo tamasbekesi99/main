@@ -273,7 +273,7 @@ environment.etc."firefox/policies/policies.json".target = "librewolf/policies/po
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  services.gnome.gnome-keyring.enable = true;
+  #services.gnome.gnome-keyring.enable = true;
 
   programs.gnupg.agent ={
     enable = true;
