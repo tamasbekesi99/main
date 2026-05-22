@@ -17,117 +17,116 @@ fastfetch --config hyde/*.jsonc
     },
   },
   "display": {
-    "separator": " : "
+"color": {
+            "keys": "blue"
+        },
+        "separator": "",
+        // Constants are reusable strings referenced by {$1}, {$2}, etc.
+        // These contain ANSI escape codes for cursor positioning
+        "constants": [
+            "─────────────────────────────", // {$1} - horizontal line for borders 
+            "\u001b[30D",                                     // {$2} - move cursor left 47 columns
+            "\u001b[35C",                                     // {$3} - move cursor right 47 columns
+            "\u001b[29C",                                     // {$4} - move cursor right 46 columns
+            "──────────────────────────",    // {$5} - horizontal line for borders (-3)
+      
+        ],
+        "brightColor": false
+
+
   },
   "modules": [
-    //{
-    //  "type": "command",
-    //  "key": "  ",
-    //  "keyColor": "blue",
-    //  "text": "splash=$(hyprctl splash);echo $splash"
-    //},
-    {
-      "type": "custom",
-      "format": "╭──────────────────────────────────────────╮",
-    },
-    {
-      "type": "chassis",
-      "key": "  󰌢 Chassis",
-      "format": "{1} {2~0,10}"
-    },
-    {
-      "type": "os",
-      "key": "   OS",
-      "format": "{pretty-name}",
-      "keyColor": "red"
-    },
-    {
-      "type": "kernel",
-      "key": "   Kernel",
-      "format": "{2}",
-      "keyColor": "red"
-    },
-    {
-      "type": "packages",
-      "key": "  󰏗 Packages",
-      "format": "{nix-system} (system), {nix-user} (user)",
-      "keyColor": "green"
-    },
-    {
-      "type": "display",
-      "key": "  󰍹 Display",
-      "format": "{1}x{2} @ {3}Hz [{7}]",
-      "keyColor": "green"
-    },
-    {
-      "type": "terminal",
-      "key": "   Terminal",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "wm",
-      "key": "   WM",
-      "format": "{pretty-name} {version} ({protocol-name})",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "custom",
-      "format": "╰──────────────────────────────────────────╯"
-    },
-    "break",
-    {
-      "type": "title",
-      "key": "  ",
-      "format": "{6} {7} {8}"
-    },
-    {
-      "type": "custom",
-      "format": "╭──────────────────────────────────────────╮"
-    },
-    {
-      "type": "cpu",
-      "format": "{1} @ {7}",
-      "key": "  󰻠 CPU",
-      "keyColor": "blue"
-    },
-    {
-      "type": "gpu",
-      "format": "{name} [{type}]",
-      "key": "  󰊴 GPU",
-      "keyColor": "blue"
-    },
-    {
-      "type": "command",
-      "text": "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*Mesa /amdgpu (Mesa /' | sed 's/-cachyos[0-9.]*/-cachyos)/' | awk '{print $1, $2, $3}'",
-      "key": "   GPU Driver",
-      "keyColor": "magenta"
-    },
-    {
-      "type": "memory",
-      "key": "   Memory ",
-      "keyColor": "magenta"
-    },
-    //{
-    //  "type": "command",
-    //  "key": "  󱦟 OS Age ",
-    //  "keyColor": "red",
-    //  "text": "bash -c 'DAYS=$(( ($(date +%s) - $(stat -c %W /)) / 86400 )); DATE=$(LC_TIME=C date -d @$(stat -c %W /) \"+%b %d, %Y\"); echo \"$DAYS days ($DATE)\"'"
-    //},
-    {
-      "type": "uptime",
-      "key": "   Uptime ",
-      "keyColor": "red"
-    },
-    {
-      "type": "custom",
-      "format": "╰──────────────────────────────────────────╯"
-    },
-    {
-      "type": "colors",
-      "paddingLeft": 2,
-      "symbol": "circle"
-    },
-    "break"
-  ]
+    
+                // Hardware section with magenta color theme
+        {
+            "type": "custom",
+            "key": "{#magenta}╭───────────┬{$1}╮{#keys} \u001b[28D",
+            "format": "{#magenta} Hardware "
+        },
+        {
+            "type": "host",
+            // Similar structure but with cyan color formatting:
+            // │{#cyan}│             - Left border with cyan color
+            //  {icon}               - Chassis icon
+            //  Chassis             - Fixed label text
+            // │{$4}│{#keys}│{$2}    - Positioning and borders for value area
+            "key": "{#magenta}│ \udb80\udf22  Host   │{$4}│{#keys} {$2}",
+            "format": "{1}"
+        },
+        {
+            "type": "display",
+            "key": "{#magenta}│ {icon}  Disp   │{$4}│{#keys} {$2}",
+            "format": "{1} x {2} @ {3} Hz"
+        },        
+        {
+            "type": "cpu",
+            "key": "{#magenta}│ {icon}  CPU    │{$4}│{#keys} {$2}",
+            "format": "{1}"
+        },
+        {
+            "type": "gpu",
+            "key": "{#magenta}│ {icon}  GPU    │{$4}│{#keys} {$2}",
+            "format": "{name:15}" // Left-align GPU name within 15 characters
+        },
+        {
+            "type": "memory",
+            "key": "{#magenta}│ {icon}  RAM    │{$4}│{#keys} {$2}",
+            "format": "{used}/{total} [{percentage}]"
+        },
+        {
+            "type": "disk",
+            "key": "{#magenta}│ {icon}  SSD    │{$4}│{#keys} {$2}",
+        "format": "{size-used}/{size-total} [{size-percentage}]"
+        },
+        {
+            "type": "battery",
+            "key": "{#magenta}│ {icon}  Bat    │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "custom",
+            "key": "{#magenta}╰───────────┴{$1}╯{#keys}",
+            "format": ""
+        },
+
+        // Software section with blue color theme
+        {
+            "type": "custom",
+            "key": "{#blue}╭───────────┬{$1}╮{#keys} \u001b[28D",
+            "format": "{#blue} Software "
+        },
+        {
+            "type": "os",
+            "key": "{#blue}│   OS     │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "kernel",
+            "key": "{#blue}│ {icon}  Kern   │{$4}│{#keys} {$2}",
+            "format": "{2}" 
+        },
+        {
+            "type": "packages",
+            "key": "{#blue}│ {icon}  Pack   │{$4}│{#keys} {$2}",
+            "format": "{nix-system} (system), {nix-user} (user)" 
+        },
+        {
+            "type": "wm",
+            "key": "{#blue}│ {icon}  WM     │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "terminal",
+            "key": "{#blue}│ {icon}  Term   │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "shell",
+            "key": "{#blue}│ {icon}  Shell  │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "custom",
+            "key": "{#blue}╰───────────┴{$1}╯{#keys}",
+            "format": ""
+        },
+        "break",
+
+    ]
 }
 
