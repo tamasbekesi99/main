@@ -15,9 +15,8 @@
     kitty = "kitty";
     yazi = "yazi";
     neomutt = "neomutt";
-    ashell = "ashell";
-    swaync = "swaync";
     waybar = "waybar";
+    dunst = "dunst";
   };
 in {
   imports = [

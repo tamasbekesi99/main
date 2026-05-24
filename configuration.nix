@@ -209,9 +209,10 @@ in
     hyprpolkitagent #polkit agent
     hyprpicker #color picker
     awww #wallpaper
-    swaynotificationcenter
+    #swaynotificationcenter
+    dunst #for notification
     fastfetch
-    ashell
+    #ashell
     waybar
     grim #for screenshoots
     slurp #for screenshoots
@@ -228,6 +229,9 @@ in
     #noctalia-shell
     #android-tools
   ];
+
+  services.dunst.enable = true;
+  services.dunst.enableWayland = true;
 
   programs.nh = {
     enable = true;
