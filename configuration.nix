@@ -41,6 +41,12 @@ in
   # Enable Flatpak support
   # services.flatpak.enable = true;
 
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
   #BTRFS options
 
   fileSystems = {
@@ -117,14 +123,14 @@ in
     dedicatedServer.openFirewall = false; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = false; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession.enable = true;
-    extraCompatPackages = [pkgs.proton-ge-bin];
+    #extraCompatPackages = [pkgs.proton-ge-bin];
   };
 
-  programs.gamemode.enable = true;
+  #programs.gamemode.enable = true;
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    #  capSysNice = true;
     args = [
       "--rt"
       "--expose-wayland"
@@ -206,10 +212,11 @@ in
     swaynotificationcenter
     fastfetch
     ashell
+    waybar
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
-    nix-output-monitor # for better update visuals
+    #nix-output-monitor # for better update visuals
     unzip
     #sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
@@ -221,6 +228,13 @@ in
     #noctalia-shell
     #android-tools
   ];
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/tommy/nixos-dotfiles"; # sets NH_OS_FLAKE variable for you
+  };
 
   hardware.bluetooth = {
     enable = true;

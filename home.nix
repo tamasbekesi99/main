@@ -17,6 +17,7 @@
     neomutt = "neomutt";
     ashell = "ashell";
     swaync = "swaync";
+    waybar = "waybar";
   };
 in {
   imports = [
@@ -25,9 +26,11 @@ in {
     ./modules/zoxide.nix
   ];
 
-  home.username = "tommy";
-  home.homeDirectory = "/home/tommy";
-  home.stateVersion = "25.11";
+  home = {
+    username = "tommy";
+    homeDirectory = "/home/tommy";
+    stateVersion = "25.11";
+  };
 
   programs.git = {
     enable = true;

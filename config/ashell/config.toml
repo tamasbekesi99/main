@@ -95,15 +95,15 @@ indicators = [ "IdleInhibitor", "PowerProfile", "Audio", "Microphone", "Bluetoot
 [appearance]
 
 style = "Solid"
-font_name = "JetBrainsMono"
+font_name = "Iosevka"
 opacity = 0.7
+#scale_factor = 1.2
 
-
-primary_color = "#00cccc"
+primary_color = "#7aa2f7"
 success_color = "#9ece6a"
-text_color = "#00cccc"
-
-workspace_colors = [ "#00cccc", "#006666" ]
+text_color = "#a9b1d6"
+workspace_colors = [ "#7aa2f7", "#9ece6a" ]
+special_workspace_colors = [ "#7aa2f7", "#9ece6a" ]
 
 [appearance.danger_color]
 base = "#f7768e"
@@ -115,7 +115,7 @@ weak = "#24273a"
 strong = "#414868"
 
 [appearance.secondary_color]
-base = "#006666"
+base = "#0c0d14"
 
 [appearance.menu]
 opacity = 0.7

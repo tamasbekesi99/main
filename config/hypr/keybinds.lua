@@ -5,6 +5,7 @@
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
 local browser = "librewolf"
+local restartwaybar = "pkill waybar && waybar &"
 local menu = "fuzzel --launch-prefix=app2unit"
 local snip = 'grim -g "$(slurp)" - | swappy -f -'
 
@@ -20,6 +21,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("app2unit -- " .. terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("app2unit -- " .. browser))
 hl.bind(mainMod .. " +SHIFT + P", hl.dsp.window.move({ workspace = "special:secrets" }))
+hl.bind(mainMod .. " +SHIFT + R", hl.dsp.exec_cmd(restartwaybar))
 hl.bind(mainMod .. " + P", hl.dsp.workspace.toggle_special("secrets"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("app2unit -- hyprpicker"))
 --hl.bind(mainMod .. " + M", hl.dsp.exit())
@@ -63,8 +65,9 @@ hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
 -- Scroll through existing workspaces with mainMod + scroll
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_down", hl.dsp.layout("move +col"))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.layout("move -col"))
+--hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Opacity for inactive windows
 hl.window_rule({
