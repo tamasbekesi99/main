@@ -19,10 +19,18 @@
 #tray {
   /*background-color: rgba(29,31,46, 0.95);*/
   background-color: rgba(15, 27, 53, 0.9);
-  padding: 4px 6px; /* 保持内部间距 */
-  margin-top: 6px; /* 外部间距增加 */
-  margin-left: 6px; /* 外部间距增加 */
-  margin-right: 6px; /* 外部间距增加 */
+  background: linear-gradient(
+    0.5turn,
+    #1c1f3b,
+    #282c4d,
+    #3c3f68,
+    #4d4d80,
+    #606271
+  );
+  padding: 4px 6px;
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
   border-radius: 10px;
   border-width: 0px;
 }
@@ -30,26 +38,49 @@
 #clock,
 #custom-power {
   background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  /*background: linear-gradient(
+    180deg,
+    #55aaff 0%,
+    rgba(0, 60, 200, 1) 50%,
+    rgba(10, 20, 200, 1) 50%,
+    rgba(10, 20, 128, 1) 80%
+  );*/
+  background: linear-gradient(
+    0.5turn,
+    #1c1f3b,
+    #282c4d,
+    #3c3f68,
+    #4d4d80,
+    #606271
+  );
+  margin-top: 6px;
   margin-right: 6px;
   /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+  padding: 0px 0px;
   border-radius: 10px 10px 10px 10px;
   border-width: 0px;
 }
 
-#network,
-#custom-lock {
+#network {
   background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  background: linear-gradient(
+    0.5turn,
+    #1c1f3b,
+    #282c4d,
+    #3c3f68,
+    #4d4d80,
+    #606271
+  );
+
+  margin-top: 6px;
   margin-left: 6px;
   /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+  padding: 4px 2px;
   border-radius: 10px 10px 10px 10px;
   border-width: 0px;
 }
 
-#custom-reboot,
+#custom-lock,
 #custom-logout,
 #bluetooth,
 #battery,
@@ -59,14 +90,22 @@
 #memory,
 #cpu {
   background-color: rgba(15, 27, 53, 0.9);
-  margin-top: 6px; /* 与屏幕顶部留出距离 */
+  background: linear-gradient(
+    0.5turn,
+    #1c1f3b,
+    #282c4d,
+    #3c3f68,
+    #4d4d80,
+    #606271
+  );
+
+  margin-top: 6px;
   /*margin-bottom: 4px;*/
-  padding: 4px 2px; /* 保持内部间距 */
+  padding: 4px 2px;
   border-radius: 10px 10px 10px 10px;
   border-width: 0px;
 }
 
-#custpm-temperature.critical,
 #pulseaudio.muted {
   color: #ff0000;
   padding-top: 0;
@@ -98,7 +137,7 @@
 }
 
 #workspaces button.active {
-  background-color: #61afef; /* 蓝色高亮 */
+  background-color: #61afef;
   color: #ffffff;
   padding: 2px 8px;
   margin: 0 2px;
