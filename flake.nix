@@ -2,7 +2,6 @@
   description = "Hyprland on Nixos";
 
   inputs = {
-
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -15,13 +14,26 @@
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
-   };
-
+    };
+    /*
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    */
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, silentSDDM, nvf, ... }: {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    home-manager,
+    silentSDDM,
+    nvf,
+    ...
+  }: {
     nixosConfigurations.hyprland-btw = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
@@ -48,4 +60,3 @@
     };
   };
 }
-

@@ -25,14 +25,6 @@
         shiftwidth = 2;
         wrap = false;
       };
-      maps = {
-        normal = {
-          "<leader>e" = {
-            action = "<CMD>Neotree toggle<CR>";
-            silent = false;
-          };
-        };
-      };
 
       diagnostics = {
         enable = true;
@@ -120,7 +112,10 @@
         clang.enable = true;
         zig.enable = true;
         python.enable = true;
-        markdown.enable = true;
+        markdown = {
+          enable = true;
+          extensions.markview-nvim.enable = true;
+        };
         html.enable = true;
         lua.enable = true;
         css.enable = true;
@@ -139,6 +134,8 @@
       statusline.lualine = {
         enable = true;
         theme = "onedark";
+        sectionSeparator.left = "";
+        sectionSeparator.right = "";
       };
 
       autopairs.nvim-autopairs.enable = true;
@@ -159,7 +156,10 @@
       dashboard.dashboard-nvim.enable = true;
       filetree.neo-tree.enable = true;
       utility = {
-        preview.markdownPreview.enable = true;
+        preview.markdownPreview = {
+          enable = true;
+          autoStart = true;
+        };
         ccc.enable = false;
         vim-wakatime.enable = false;
         icon-picker.enable = true;

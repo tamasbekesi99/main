@@ -1,6 +1,6 @@
 {
   config,
-  lib,
+  inputs,
   pkgs,
   ...
 }:
@@ -157,11 +157,13 @@ in
         {
           name = "libpipewire-module-protocol-pulse";
           args = {
-            pulse.min.req = "256/48000";
-            pulse.default.req = "256/48000";
-            pulse.max.req = "256/48000";
-            pulse.min.quantum = "256/48000";
-            pulse.max.quantum = "256/48000";
+            pulse = {
+              min.req = "256/48000";
+              default.req = "256/48000";
+              max.req = "256/48000";
+              min.quantum = "256/48000";
+              max.quantum = "256/48000";
+            };
           };
         }
       ];
@@ -173,11 +175,13 @@ in
   #Virt
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["tommy"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.qemu = {
-    swtpm.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    libvirtd.qemu = {
+      swtpm.enable = true;
+    };
+    spiceUSBRedirection.enable = true;
   };
-  virtualisation.spiceUSBRedirection.enable = true;
 
   #user
   users.users.tommy = {
@@ -190,7 +194,8 @@ in
 
   environment.systemPackages = with pkgs; [
     wget
-    librewolf #web browser
+    brave
+    #librewolf #web browser
     lynx #TUI web browser
     brightnessctl #for laptop  brightness
     btop
@@ -226,8 +231,9 @@ in
     neomutt #terminal email program
     newsboat #terminal RSS feed reader
     seahorse #gnupg GUI
-    #noctalia-shell
     #android-tools
+    #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    libreoffice-fresh
   ];
 
   services.dunst.enable = true;

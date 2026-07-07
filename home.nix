@@ -65,6 +65,7 @@ in {
     app2unit #for faster app launch, compared to uwsm
     pcmanfm #GUI filemanager
     nix-search-tv #with th bash script it is easy to serach for nix packages in the terminal
+    wttrbar #weather app rewritten in rust for waybar
   ];
 
   dconf.settings = {
@@ -80,10 +81,11 @@ in {
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "x-scheme-handler/http" = ["librewolf.desktop"];
-        "x-scheme-handler/https" = ["librewolf.desktop"];
-        "x-scheme-handler/about" = ["librewolf.desktop"];
-        "x-scheme-handler/unknown" = ["librewolf.desktop"];
+        "x-scheme-handler/http" = ["barve.desktop"];
+        "x-scheme-handler/https" = ["brave.desktop"];
+        "x-scheme-handler/about" = ["brave.desktop"];
+        "x-scheme-handler/unknown" = ["brave.desktop"];
+        "images/*" = ["imv.desktop"];
         "images/png" = ["imv.desktop"];
         "images/jpg" = ["imv.desktop"];
         "images/webp" = ["imv.desktop"];
