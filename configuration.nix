@@ -23,6 +23,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.cpu.amd.updateMicrocode = true;
 
   services.displayManager.sddm = {
     enable = true;
@@ -194,8 +195,8 @@ in
 
   environment.systemPackages = with pkgs; [
     wget
-    brave
-    #librewolf #web browser
+    #brave
+    librewolf #web browser
     lynx #TUI web browser
     brightnessctl #for laptop  brightness
     btop

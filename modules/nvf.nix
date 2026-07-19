@@ -109,9 +109,7 @@
         enableTreesitter = true;
         enableExtraDiagnostics = true;
         nix.enable = true;
-        clang.enable = true;
         zig.enable = true;
-        python.enable = true;
         markdown = {
           enable = true;
           extensions.markview-nvim.enable = true;

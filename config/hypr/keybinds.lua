@@ -5,7 +5,7 @@
 local terminal = "kitty"
 local fileManager = "kitty -e yazi"
 -- local browser = "librewolf"
-local browser = "brave"
+local browser = "librewolf"
 local restartwaybar = "pkill waybar && waybar &"
 local menu = "fuzzel --launch-prefix=app2unit"
 local snip = 'grim -g "$(slurp)" - | swappy -f -'
