@@ -3,6 +3,7 @@
 This is a hobby project using Nixos with Hyprland(UWSM) and ~~Noctalia-shell~~
 DankMaterialShell (my simple quickshell bar was replaces by it).
 
+![My image](./swappy-20260720_115558.png)
 ![My image](./swappy-20260413_145450.png)
 ![My image2](./swappy-20260413_145728.png)
 
