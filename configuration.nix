@@ -205,6 +205,7 @@ in
     usbutils
     playerctl
     pavucontrol #GUI for the audio
+    libnotify #for notifications
     yazi #teminal file manager
     kitty #terminal
     keepassxc
@@ -215,15 +216,11 @@ in
     hyprpolkitagent #polkit agent
     hyprpicker #color picker
     awww #wallpaper
-    #swaynotificationcenter
-    dunst #for notification
     fastfetch
-    #ashell
     waybar
     grim #for screenshoots
     slurp #for screenshoots
     swappy #for screenshoots
-    #nix-output-monitor # for better update visuals
     unzip
     #sddm-astronaut #SDDM theme
     kdePackages.qtmultimedia #SDDM theme
@@ -236,9 +233,6 @@ in
     #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     libreoffice-fresh
   ];
-
-  services.dunst.enable = true;
-  services.dunst.enableWayland = true;
 
   programs.nh = {
     enable = true;

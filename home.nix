@@ -16,7 +16,6 @@
     yazi = "yazi";
     neomutt = "neomutt";
     waybar = "waybar";
-    dunst = "dunst";
   };
 in {
   imports = [
@@ -29,6 +28,29 @@ in {
     username = "tommy";
     homeDirectory = "/home/tommy";
     stateVersion = "25.11";
+  };
+
+  services.mako = {
+    enable = true;
+    settings = {
+      "actionable=true" = {
+        anchor = "top-left";
+      };
+      actions = true;
+      anchor = "top-right";
+      background-color = "#000000";
+      border-color = "#b1c5ff";
+      border-radius = 12;
+      default-timeout = 5000;
+      font = "monospace 14";
+      height = 100;
+      icons = true;
+      ignore-timeout = false;
+      layer = "top";
+      margin = 10;
+      markup = true;
+      width = 300;
+    };
   };
 
   programs.git = {
@@ -60,7 +82,6 @@ in {
     jq #for the quickshell json script in shell.qml
     gcc
     nitch #neofetch like tool
-    #rofi
     fuzzel #app launcher
     app2unit #for faster app launch, compared to uwsm
     pcmanfm #GUI filemanager
