@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="$HOME/walls/KawaiiWaifu/sketchy/"
+WALLPAPER_DIR="$HOME/walls/"
 
 # Interval between changes (in seconds)
 INTERVAL=900

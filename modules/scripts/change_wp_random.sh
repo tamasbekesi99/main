@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set the path to the wallpapers directory
-wallpapersDir="$HOME/walls/KawaiiWaifu/sketchy/"
+wallpapersDir="$HOME/walls/"
 
 # Get a list of all image files in the wallpapers directory
 wallpapers=("$wallpapersDir"/*)
