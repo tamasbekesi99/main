@@ -85,8 +85,8 @@ hl.device({
 
 hl.config({
 	general = {
-		gaps_in = 5,
-		gaps_out = 5,
+		gaps_in = 1,
+		gaps_out = 1,
 		border_size = 2,
 		col = {
 			active_border = { colors = { "rgba(b1c5ffee)", "rgba(172e60ee)" }, angle = 90 },

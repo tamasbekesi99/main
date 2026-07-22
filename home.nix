@@ -86,7 +86,6 @@ in {
     app2unit #for faster app launch, compared to uwsm
     pcmanfm #GUI filemanager
     nix-search-tv #with th bash script it is easy to serach for nix packages in the terminal
-    wttrbar #weather app rewritten in rust for waybar
   ];
 
   dconf.settings = {

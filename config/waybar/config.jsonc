@@ -1,7 +1,6 @@
 {
   "layer": "top",
-  "position": "top",
-  "height": 24,
+  "position": "left",
   "spacing": 0,
   "modules-left": [
     "hyprland/workspaces",
@@ -9,7 +8,7 @@
     "memory"
   ],
   //"modules-center": ["hyprland/window"],
-  "modules-center": ["clock","custom/weather"],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "network",
@@ -41,32 +40,32 @@
     }
   },
   "custom/lock": {
-  "format": "<span color='#00FFFF'>  </span>",
+  "format": "<span color='#00FFFF'></span>",
   "on-click": "hyprlock",
   "tooltip": true,
   },
   "custom/reboot": {
-    "format": "<span color='#FFD700'>  </span>",
+    "format": "<span color='#FFD700'></span>",
     "on-click": "systemctl reboot",
     "tooltip": true,
   },
    "custom/logout": {
-    "format": "<span color='#FFD700'> 󰍃 </span>",
+    "format": "<span color='#FFD700'>󰍃</span>",
     "on-click": "uwsm stop",
     "tooltip": true,
   },
   "custom/power": {
-    "format": "<span color='#FF4040'>  </span>",
+    "format": "<span color='#FF4040'></span>",
     "on-click": "systemctl poweroff",
     "tooltip": true,
   },
   "network": {
-    "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
-    "format-ethernet": "<span color='#7FFF00'> 󰈀 </span>Eth ",
+    "format-wifi": "<span color='#00FFFF'>󰤨</span>{essid} ",
+    "format-ethernet": "<span color='#7FFF00'>󰈀</span>",
     "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
     "format-linked": "<span color='#FFA500'> 󱘖 </span>{ifname} (No IP) ",
     "format-disconnected": "<span color='#FF4040'>  </span>Disconnected ",
-    "format-alt": "<span color='#00FFFF'> 󰤨 </span>{signalStrength}% ",
+    "format-alt": "<span color='#00FFFF'>󰤨</span>{signalStrength}% ",
     "interval": 1
   },
   "battery": {
@@ -74,15 +73,15 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#28CD41'> {icon} </span>{capacity}% ",
-    "format-charging": " 󱐋{capacity}%",
+    "format": "<span color='#28CD41'>{icon}</span>",
+    "format-charging": "󱐋{capacity}%",
 	  "interval": 10,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
   },
   "pulseaudio": {
-    "format": "<span color='#00FF7F'>{icon}</span>{volume}% ",
-    "format-muted": "<span color='#FF4040'> 󰖁 </span>0% ",
+    "format": "<span color='#00FF7F'>{icon}</span>",
+    "format-muted": "<span color='#FF4040'>󰖁</span>0% ",
     "format-icons": {
       "headphone": "<span color='#BF00FF'>  </span>",
       "hands-free": "<span color='#BF00FF'>  </span>",
@@ -91,9 +90,9 @@
       "portable": "<span color='#00FFFF'>  </span>",
       "car": "<span color='#FFA500'>  </span>",
       "default": [
-        "<span color='#808080'>  </span>",
-        "<span color='#FFFF66'>  </span>",
-        "<span color='#00FF7F'>  </span>"
+        "<span color='#808080'></span>",
+        "<span color='#FFFF66'></span>",
+        "<span color='#00FF7F'></span>"
       ]
     },
     "on-click-right": "pavucontrol -t 3",
@@ -101,17 +100,17 @@
     "tooltip": true,
   },
     "memory": {
-    "format": "<span color='#8A2BE2'>  </span>{used:0.1f}G/{total:0.1f}G ",
+    "format": "<span color='#8A2BE2'></span>",
     "tooltip": true,
   },
   "cpu": {
-    "format": "<span color='#FF9F0A'>  </span>{usage}% ",
+    "format": "<span color='#FF9F0A'></span>",
     "tooltip": true
   },
   "clock": {
     "interval": 1,
     "timezone": "Europe/Budapest",
-    "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
+    "format": "{:%H\n%M}",
     "tooltip": true,
     "tooltip-format": "{:L%Y.%m.%d. %A}"
   },
@@ -121,23 +120,16 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span color='#FFD700'>{icon}</span>{percent}% ",
+    "format": "<span color='#FFD700'>{icon}</span>",
     "tooltip": false,
     "format-icons": [
-      "<span color='#696969'> 󰃞 </span>",  
-      "<span color='#A9A9A9'> 󰃝 </span>",  
-      "<span color='#FFFF66'> 󰃟 </span>", 
-      "<span color='#FFD700'> 󰃠 </span>"  
+      "<span color='#696969'>󰃞</span>",  
+      "<span color='#A9A9A9'>󰃝</span>",  
+      "<span color='#FFFF66'>󰃟</span>", 
+      "<span color='#FFD700'>󰃠</span>"  
     ]
   },
 
-  "custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar",
-    "return-type": "json"
-  },
   "bluetooth": {
     "format": "<span color='#00BFFF'>  </span>{status} ",
     "format-connected": "<span color='#00BFFF'>  </span>{device_alias} ",

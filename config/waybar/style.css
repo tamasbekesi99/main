@@ -105,16 +105,30 @@
   font-family: "Iosevka Nerd Font";
   font-size: 14px;
   font-weight: bold;
-  min-height: 0;
   border: none;
   border-radius: 0px;
 }
 
 window#waybar {
   background: transparent;
+  border-radius: 12px;
+  background:
+    radial-gradient(
+        circle at 50% 250%,
+        alpha(darker(@surface), 0.9),
+        alpha(@surface_dim, 0.9)
+      )
+      padding-box,
+    linear-gradient(@primary, @on_primary) border-box;
+  border: 2px solid transparent;
+  opacity: 0.8;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: inset 1px 2px 2px rgba(255, 255, 255, 0.2);
 }
 
-.modules-left {
+/* .modules-left {
   background-color: @surface;
   border-radius: 12px;
   background:
@@ -165,18 +179,17 @@ window#waybar {
   opacity: 0.8;
   margin: 10px;
   box-shadow: inset 0px 2px 2px rgba(255, 255, 255, 0.2);
-}
+} */
 
 label.module {
   font-size: 14px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
   border-radius: 5px;
 }
 
 #workspaces {
   padding: 5px 3px 5px 3px;
-  min-width: 176px;
 }
 
 #workspaces button {
@@ -192,7 +205,6 @@ label.module {
   background: alpha(@primary, 0.2);
   border: 1px solid transparent;
   transition: all 0.3s ease-in-out;
-  min-width: 30px;
   border-radius: 8px;
   box-shadow:
     inset 1px 2px 2px rgba(255, 255, 255, 0.5),
@@ -223,15 +235,6 @@ window#waybar.empty #window {
   background-color: transparent;
 }
 
-#taskbar {
-  padding: 5px 0px 5px 0px;
-}
-
-#taskbar button {
-  border-radius: 6px;
-  padding: 0px 5px 0px 5px;
-}
-
 #taskbar button:hover {
   background: @primary;
   color: @on_primary;
@@ -239,16 +242,7 @@ window#waybar.empty #window {
 
 #memory,
 #cpu,
-#clock {
-  margin-left: 12px;
-  margin-right: 12px;
-}
-
-#tray {
-  padding: 0px 5px 0px 10px;
-}
-
-#tray > .passive {
+#clock #tray #tray > .passive {
   -gtk-icon-effect: dim;
 }
 
