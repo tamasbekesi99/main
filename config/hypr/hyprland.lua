@@ -74,8 +74,9 @@ hl.animation({
 hl.animation({
 	leaf = "workspaces",
 	enabled = true,
-	speed = 6,
+	speed = 5,
 	bezier = "default",
+	style = "slidevert",
 })
 
 hl.device({

@@ -4,9 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    adwaita-icon-theme
-    #papirus-icon-theme
-    flat-remix-gtk
     gnome-themes-extra
   ];
 
@@ -25,13 +22,13 @@
     enable = true;
 
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.kdePackages.breeze-gtk;
+      name = "Breeze-Dark";
     };
 
     iconTheme = {
-      package = pkgs.flat-remix-icon-theme;
-      name = "Flat-Remix-Teal-Dark";
+      package = pkgs.kora-icon-theme;
+      name = "kora"; #icon theme names are case sensitive
     };
 
     font = {

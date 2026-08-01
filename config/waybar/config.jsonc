@@ -14,13 +14,11 @@
     "network",
     "battery",
     //"bluetooth",
-    "pulseaudio",
+    "group/audio",
     "backlight",
     //"memory",
     //"cpu",
-    "custom/lock",
-    "custom/logout",
-    "custom/power"
+    "group/power"
   ],
   "hyprland/workspaces": {
     "disable-scroll": false,
@@ -59,6 +57,19 @@
     "on-click": "systemctl poweroff",
     "tooltip": true,
   },
+
+   "group/power": {
+        "modules": [
+            "custom/power",
+            "custom/logout",
+            "custom/reboot",
+            "custom/lock",
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500
+        }
+    },
   "network": {
     "format-wifi": "<span color='#00FFFF'>󰤨</span>{essid} ",
     "format-ethernet": "<span color='#7FFF00'>󰈀</span>",
@@ -73,14 +84,14 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span color='#28CD41'>{icon}</span>",
+    "format": "<span color='#28CD41'>{capacity}\n {icon}</span>",
     "format-charging": "󱐋{capacity}%",
 	  "interval": 10,
     "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
     "tooltip": true
   },
   "pulseaudio": {
-    "format": "<span color='#00FF7F'>{icon}</span>",
+    "format": "<span color='#00FF7F'>{volume}\n{icon}</span>",
     "format-muted": "<span color='#FF4040'>󰖁</span>0% ",
     "format-icons": {
       "headphone": "<span color='#BF00FF'>  </span>",
@@ -97,8 +108,28 @@
     },
     "on-click-right": "pavucontrol -t 3",
     "on-click": "pactl -- set-sink-mute 0 toggle",
-    "tooltip": true,
+    "tooltip": false,
+      "justify": "center",
+        "reverse-scrolling": true
   },
+
+     "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "vertical"
+    },
+
+    "group/audio": {
+        "modules" : [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ],
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        }
+    },
     "memory": {
     "format": "<span color='#8A2BE2'></span>",
     "tooltip": true,
@@ -120,7 +151,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span color='#FFD700'>{icon}</span>",
+    "format": "<span color='#FFD700'>{percent}\n{icon}</span>",
     "tooltip": false,
     "format-icons": [
       "<span color='#696969'>󰃞</span>",  

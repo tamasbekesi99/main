@@ -1,7 +1,6 @@
 # Warning '!'
 
-This is a hobby project using Nixos with Hyprland(UWSM) and ~~Noctalia-shell~~
-DankMaterialShell (my simple quickshell bar was replaces by it).
+This is a hobby project using Nixos with Hyprland(UWSM).
 
 ![My image](./swappy-20260720_115558.png)
 ![My image](./swappy-20260413_145450.png)
@@ -21,9 +20,7 @@ Clone the repo:
 Make config changes in **nixos-dotfiles/configuratoin** also **home.nix** When
 downloaded, the **hardware.nix file should be replaced** with the system one.
 
-Replace the hostname with your own and run:
 
-`NIX_CONFIG="experimental-features = nix-command flakes" sudo nixos-rebuild switch --flake .#HOSTNAME`
 
 ## **TODO**
 
